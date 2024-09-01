@@ -8,13 +8,27 @@ import 'package:ladder/features/auth/login.view.dart';
 import 'package:ladder/features/auth/state/auth.bloc.dart';
 import 'package:ladder/features/auth/state/auth.event.dart';
 import 'package:ladder/features/auth/state/auth.state.dart';
+import 'package:ladder/features/auth/validators/auth.validators.dart';
 import 'package:ladder/features/auth/widgets/auth.text.dart';
 import 'package:ladder/features/home/home.view.dart';
 import 'package:ladder/gen/assets.gen.dart';
 import 'package:ladder/gen/colors.gen.dart';
 
-class SignupView extends StatelessWidget {
+class SignupView extends StatefulWidget {
   const SignupView({super.key});
+
+  @override
+  State<SignupView> createState() => _SignupViewState();
+}
+
+class _SignupViewState extends State<SignupView> {
+  bool obscureText = true;
+
+  void toggleObscureText() {
+    setState(() {
+      obscureText = !obscureText;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +98,9 @@ class SignupView extends StatelessWidget {
                     LadderFormField(
                       controller: context.read<AuthBloc>().signupPasswordController,
                       hintText: "Password",
+                      hasSuffixIcon: true,
+                      obscureText: obscureText,
+                      onToggleObscureText: toggleObscureText,
                     ),
                     SizedBox(height: 102.h),
                     LadderTextButton(
@@ -98,6 +115,7 @@ class SignupView extends StatelessWidget {
                     LadderAuthText(
                         text: "Log-in",
                         onTap: () {
+                          _clearTextfield(context);
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(builder: (_) => const Login()),
@@ -119,10 +137,11 @@ class SignupView extends StatelessWidget {
     final email = context.read<AuthBloc>().signupEmailController.value.text;
     final password = context.read<AuthBloc>().signupPasswordController.value.text;
 
-    if (name.isNotEmpty && email.isNotEmpty && password.isNotEmpty) {
+    final result = AuthValidator.validateSignupFields(email: email, password: password, name: name);
+    if (result.isValid) {
       context.read<AuthBloc>().add(SignupEvent());
     } else {
-      showToast("All fields are required");
+      showToast(result.message!);
     }
   }
 

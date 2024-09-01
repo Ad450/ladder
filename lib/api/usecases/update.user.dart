@@ -16,7 +16,7 @@ class UpdateUser implements Usecase<VoidType, UpdateUserParam> {
         profileFilePath: param.profileFilePath,
       );
       return const Right(VoidType());
-    } on HiveFailure catch (e) {
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }

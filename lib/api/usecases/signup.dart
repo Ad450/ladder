@@ -13,7 +13,7 @@ class Signup implements Usecase<VoidType, SignupParam> {
     try {
       await _datasource.signup(name: param.name, email: param.email, password: param.password);
       return const Right(VoidType());
-    } on HiveFailure catch (e) {
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }

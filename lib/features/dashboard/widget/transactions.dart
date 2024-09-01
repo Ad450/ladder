@@ -59,7 +59,7 @@ class _TransactionsState extends State<Transactions> {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      "Get Started by adding Transactions",
+                      "Get Started by adding Revenues",
                       style: context.appTheme.textTheme.displaySmall
                           ?.copyWith(fontSize: 15, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                     ),

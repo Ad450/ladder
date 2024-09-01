@@ -73,7 +73,7 @@ class GainsWidget extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "${(totalTransactions - totalExpenses).truncate()}",
+                      "${(totalRevenues - totalExpenses).truncate()}",
                       style: context.appTheme.textTheme.titleSmall?.copyWith(
                         fontSize: 60,
                         color: ColorName.onBackground,

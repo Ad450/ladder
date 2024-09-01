@@ -9,13 +9,27 @@ import 'package:ladder/features/auth/signup.view.dart';
 import 'package:ladder/features/auth/state/auth.bloc.dart';
 import 'package:ladder/features/auth/state/auth.event.dart';
 import 'package:ladder/features/auth/state/auth.state.dart';
+import 'package:ladder/features/auth/validators/auth.validators.dart';
 import 'package:ladder/features/auth/widgets/auth.text.dart';
 import 'package:ladder/features/home/home.view.dart';
 import 'package:ladder/gen/assets.gen.dart';
 import 'package:ladder/gen/colors.gen.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  bool obscureText = true;
+
+  void toggleObscureText() {
+    setState(() {
+      obscureText = !obscureText;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +79,13 @@ class Login extends StatelessWidget {
                     type: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 24.h),
-                  LadderFormField(controller: context.read<AuthBloc>().signinPasswordController, hintText: "Password"),
+                  LadderFormField(
+                    controller: context.read<AuthBloc>().signinPasswordController,
+                    hintText: "Password",
+                    hasSuffixIcon: true,
+                    obscureText: obscureText,
+                    onToggleObscureText: toggleObscureText,
+                  ),
                   SizedBox(height: 24.h),
                   LadderTextButton(
                     onPressed: () => validateAndSignin(context),
@@ -97,10 +117,11 @@ class Login extends StatelessWidget {
     final email = context.read<AuthBloc>().signinEmailController.value.text;
     final password = context.read<AuthBloc>().signinPasswordController.value.text;
 
-    if (email.isNotEmpty && password.isNotEmpty) {
+    final result = AuthValidator.validateLoginFields(email, password);
+    if (result.isValid) {
       context.read<AuthBloc>().add(SigninEvent());
     } else {
-      showToast("All fields are required");
+      showToast(result.message!);
     }
   }
 

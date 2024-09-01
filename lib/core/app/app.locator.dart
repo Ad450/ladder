@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:ladder/api/datasources/auth.datasource.dart';
@@ -20,7 +21,6 @@ import 'package:ladder/api/usecases/signin.dart';
 import 'package:ladder/api/usecases/signout.dart';
 import 'package:ladder/api/usecases/signup.dart';
 import 'package:ladder/api/usecases/update.user.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 final locator = GetIt.instance;
 
@@ -48,7 +48,10 @@ void setupLocator() {
   );
 
   locator.registerLazySingleton<AuthDatasource>(
-    () => AuthDatasourceImpl(Supabase.instance.client, locator.get<HiveStore>()),
+    () => AuthDatasourceImpl(
+      locator.get<HiveStore>(),
+      FirebaseAuth.instance,
+    ),
   );
 
 // usecases

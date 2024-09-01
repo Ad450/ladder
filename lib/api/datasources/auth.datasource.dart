@@ -1,45 +1,45 @@
-import 'package:bcrypt/bcrypt.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ladder/api/models/profile.dart';
 import 'package:ladder/api/store/ladder.store.dart';
 import 'package:ladder/api/utils/api.errors.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class AuthDatasource {
   Future<void> signup({required String name, required String email, required String password});
   Future<void> signin({required String email, required String password});
   Future<void> signout();
-  Future<void> updateUser({
-    required String name,
-    String? profileFilePath,
-  });
+  Future<void> updateUser({required String name, String? profileFilePath});
 
   Future<ProfileModel> fetchProfile();
 }
 
 class AuthDatasourceImpl implements AuthDatasource {
-  AuthDatasourceImpl(this._supabase, this.hiveStore);
+  AuthDatasourceImpl(this.hiveStore, this.instance);
 
-  final SupabaseClient _supabase;
   final HiveStore hiveStore;
+  final FirebaseAuth instance;
 
   @override
   Future<void> signup({required String name, required String email, required String password}) async {
     try {
-      final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+      final credential = await instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-      // Insert user into the Account table
-      final response = await _supabase.from('Account').insert({
-        'name': name,
-        'email': email,
-        'password': hashedPassword,
-      }).select();
-
-      if (response.isEmpty) {
-        throw ApiFailure("signup failed ");
+      if (credential.user?.uid == null) {
+        throw ApiFailure("could not sign up");
+      } else {
+        await hiveStore.saveItem(credential.user?.uid, "uid", key: "uid");
       }
-      final currentUser = response.first;
-      await hiveStore.saveItem(currentUser["id"].toString(), "uid", key: "uid");
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        throw ApiFailure('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        throw ApiFailure('The account already exists for that email.');
+      } else {
+        throw ApiFailure(e.code);
+      }
     } catch (e) {
       throw ApiFailure(e.toString());
     }
@@ -48,22 +48,19 @@ class AuthDatasourceImpl implements AuthDatasource {
   @override
   Future<void> signin({required String email, required String password}) async {
     try {
-      final response = await _supabase.from('Account').select().eq('email', email).single();
+      final credential = await instance.signInWithEmailAndPassword(email: email, password: password);
 
-      if (response.isEmpty) {
-        throw ApiFailure("User not found.");
+      await hiveStore.saveItem(credential.user?.uid, "uid", key: "uid");
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw ApiFailure('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        throw ApiFailure('Wrong password provided for that user.');
+      } else {
+        throw ApiFailure(e.code);
       }
-
-      final user = response;
-      final storedPassword = user['password'] as String;
-
-      // Verify the password
-      if (!BCrypt.checkpw(password, storedPassword)) {
-        throw ApiFailure("Invalid password.");
-      }
-      await hiveStore.saveItem(user["id"].toString(), "uid", key: "uid");
     } catch (e) {
-      throw ApiFailure("Sign-in process failed: ${e.toString()}");
+      throw ApiFailure(e.toString());
     }
   }
 
@@ -75,6 +72,7 @@ class AuthDatasourceImpl implements AuthDatasource {
       await Hive.deleteBoxFromDisk(HiveBoxNames.revenues.name);
 
       await hiveStore.deleteItem("uid", "uid");
+      await instance.signOut();
     } catch (e) {
       throw ApiFailure("sign out failed");
     }
@@ -86,26 +84,21 @@ class AuthDatasourceImpl implements AuthDatasource {
     String? profileFilePath,
   }) async {
     try {
-      final id = await hiveStore.readItem("uid", "uid");
-      await _supabase.from('Account').update({
-        'name': name,
-        "profile_pic": profileFilePath,
-      }).eq('id', int.parse(id.toString()));
+      final currentUser = instance.currentUser;
+      await currentUser?.updateDisplayName(name);
+      await currentUser?.updatePhotoURL(profileFilePath);
+      // await currentUser.updatePassword(newPassword)
     } catch (e) {
-      throw ApiFailure("sign out failed");
+      throw ApiFailure(e.toString());
     }
   }
 
   @override
   Future<ProfileModel> fetchProfile() async {
     try {
-      final id = await hiveStore.readItem("uid", "uid");
-      final user = await _supabase.from('Account').select().eq('id', int.parse(id.toString())).single();
+      final currentUser = instance.currentUser;
 
-      if (user.isNotEmpty) {
-        return ProfileModel(name: user["name"], profileFilePath: user["profile_pic"]);
-      }
-      return ProfileModel(name: "username");
+      return ProfileModel(name: currentUser?.displayName ?? "username", profileFilePath: currentUser?.photoURL);
     } catch (e) {
       throw ApiFailure("could not fetch user profile");
     }

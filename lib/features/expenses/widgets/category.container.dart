@@ -33,7 +33,7 @@ class CategoryContainer extends StatelessWidget {
               text,
               style: context.appTheme.textTheme.displayMedium?.copyWith(
                 color: isSelected ? ColorName.white : ColorName.onBackground,
-                fontSize: 17.sp,
+                fontSize: 14.sp,
               ),
             ),
           ),

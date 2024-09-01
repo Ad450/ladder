@@ -13,7 +13,7 @@ class Signout implements Usecase<VoidType, NoParam> {
     try {
       await _datasource.signout();
       return const Right(VoidType());
-    } on HiveFailure catch (e) {
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }
