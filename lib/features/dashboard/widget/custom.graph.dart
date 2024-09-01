@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_randomcolor/flutter_randomcolor.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -73,17 +74,26 @@ class GainsWidget extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "${(totalRevenues - totalExpenses).truncate()}",
+                      "${calculatePercentage()}%",
                       style: context.appTheme.textTheme.titleSmall?.copyWith(
-                        fontSize: 60,
+                        fontSize: 24,
                         color: ColorName.onBackground,
                       ),
-                    ),
+                      overflow: TextOverflow.ellipsis,
+                    )
                   ],
                 ),
               )
             ],
           ),
         ));
+  }
+
+  int calculatePercentage() {
+    if (totalTransactions == 0) {
+      return 0; // Avoid division by zero
+    }
+    final gainOrLoss = totalRevenues - totalExpenses;
+    return ((gainOrLoss / totalTransactions) * 100).round();
   }
 }
