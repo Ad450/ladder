@@ -1,0 +1,18 @@
+<colors>
+    <color name = "background">#E5E5E5</color>
+    <color name = "primary">#9378FF</color>
+    <color name = "onBackground">#120E21</color>
+    <color name = "secondary">#99879D</color>
+    <color name = "fillColor">#99879D</color>
+    <color name = "hintColor">#848484</color>
+    <color name = "onboardingBackground">#FAF9FE</color>
+    <color name = "textfield">#E2DBFF</color>
+    <color name = "primaryAccent">#D8CEFF</color>
+    <color name = "searchbBorder">#F2F2F2</color>
+    <color name = "searchCard">#EFEDF0</color>
+    <color name = "multiline">#F2F2F2</color>
+    <color name = "white">#FFFFFF</color>
+    <color name = "text">#595959</color>
+    <color name = "ownerChat">#CABDFD</color>
+    
+</colors>
