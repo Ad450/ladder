@@ -25,8 +25,8 @@ mixin _$DashboardState {
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -41,8 +41,8 @@ mixin _$DashboardState {
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -57,8 +57,8 @@ mixin _$DashboardState {
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -207,8 +207,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -226,8 +226,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -245,8 +245,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -400,8 +400,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -419,8 +419,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -438,8 +438,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -592,8 +592,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -611,8 +611,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -630,8 +630,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -785,8 +785,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -804,8 +804,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -823,8 +823,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -979,8 +979,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -998,8 +998,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -1017,8 +1017,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -1173,8 +1173,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -1192,8 +1192,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -1211,8 +1211,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -1367,8 +1367,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -1386,8 +1386,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -1405,8 +1405,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -1518,7 +1518,7 @@ abstract class _$$DashboardStateFetchExpensesSuccessImplCopyWith<$Res> {
           $Res Function(_$DashboardStateFetchExpensesSuccessImpl) then) =
       __$$DashboardStateFetchExpensesSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<dynamic> expenses});
+  $Res call({List<ExpenseModel> expenses});
 }
 
 /// @nodoc
@@ -1540,7 +1540,7 @@ class __$$DashboardStateFetchExpensesSuccessImplCopyWithImpl<$Res>
       null == expenses
           ? _value._expenses
           : expenses // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<ExpenseModel>,
     ));
   }
 }
@@ -1549,12 +1549,13 @@ class __$$DashboardStateFetchExpensesSuccessImplCopyWithImpl<$Res>
 
 class _$DashboardStateFetchExpensesSuccessImpl
     implements _DashboardStateFetchExpensesSuccess {
-  const _$DashboardStateFetchExpensesSuccessImpl(final List<dynamic> expenses)
+  const _$DashboardStateFetchExpensesSuccessImpl(
+      final List<ExpenseModel> expenses)
       : _expenses = expenses;
 
-  final List<dynamic> _expenses;
+  final List<ExpenseModel> _expenses;
   @override
-  List<dynamic> get expenses {
+  List<ExpenseModel> get expenses {
     if (_expenses is EqualUnmodifiableListView) return _expenses;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_expenses);
@@ -1595,8 +1596,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -1614,8 +1615,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -1633,8 +1634,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -1736,9 +1737,10 @@ class _$DashboardStateFetchExpensesSuccessImpl
 
 abstract class _DashboardStateFetchExpensesSuccess implements DashboardState {
   const factory _DashboardStateFetchExpensesSuccess(
-      final List<dynamic> expenses) = _$DashboardStateFetchExpensesSuccessImpl;
+          final List<ExpenseModel> expenses) =
+      _$DashboardStateFetchExpensesSuccessImpl;
 
-  List<dynamic> get expenses;
+  List<ExpenseModel> get expenses;
   @JsonKey(ignore: true)
   _$$DashboardStateFetchExpensesSuccessImplCopyWith<
           _$DashboardStateFetchExpensesSuccessImpl>
@@ -1752,7 +1754,7 @@ abstract class _$$DashboardStateFetchRevenueSuccessImplCopyWith<$Res> {
           $Res Function(_$DashboardStateFetchRevenueSuccessImpl) then) =
       __$$DashboardStateFetchRevenueSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<dynamic> revenues});
+  $Res call({List<RevenueModel> revenues});
 }
 
 /// @nodoc
@@ -1774,7 +1776,7 @@ class __$$DashboardStateFetchRevenueSuccessImplCopyWithImpl<$Res>
       null == revenues
           ? _value._revenues
           : revenues // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<RevenueModel>,
     ));
   }
 }
@@ -1783,12 +1785,13 @@ class __$$DashboardStateFetchRevenueSuccessImplCopyWithImpl<$Res>
 
 class _$DashboardStateFetchRevenueSuccessImpl
     implements _DashboardStateFetchRevenueSuccess {
-  const _$DashboardStateFetchRevenueSuccessImpl(final List<dynamic> revenues)
+  const _$DashboardStateFetchRevenueSuccessImpl(
+      final List<RevenueModel> revenues)
       : _revenues = revenues;
 
-  final List<dynamic> _revenues;
+  final List<RevenueModel> _revenues;
   @override
-  List<dynamic> get revenues {
+  List<RevenueModel> get revenues {
     if (_revenues is EqualUnmodifiableListView) return _revenues;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_revenues);
@@ -1829,8 +1832,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -1848,8 +1851,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -1867,8 +1870,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -1970,9 +1973,10 @@ class _$DashboardStateFetchRevenueSuccessImpl
 
 abstract class _DashboardStateFetchRevenueSuccess implements DashboardState {
   const factory _DashboardStateFetchRevenueSuccess(
-      final List<dynamic> revenues) = _$DashboardStateFetchRevenueSuccessImpl;
+          final List<RevenueModel> revenues) =
+      _$DashboardStateFetchRevenueSuccessImpl;
 
-  List<dynamic> get revenues;
+  List<RevenueModel> get revenues;
   @JsonKey(ignore: true)
   _$$DashboardStateFetchRevenueSuccessImplCopyWith<
           _$DashboardStateFetchRevenueSuccessImpl>
@@ -2029,8 +2033,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -2048,8 +2052,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -2067,8 +2071,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -2258,8 +2262,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -2277,8 +2281,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -2296,8 +2300,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,
@@ -2482,8 +2486,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     required TResult Function() addExpensesLoading,
     required TResult Function() fetchExpensesLoading,
     required TResult Function() fetchRevenueLoading,
-    required TResult Function(List<dynamic> expenses) fetchExpensesSuccess,
-    required TResult Function(List<dynamic> revenues) fetchRevenueSuccess,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
     required TResult Function(String message) error,
@@ -2501,8 +2505,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult? Function()? addExpensesLoading,
     TResult? Function()? fetchExpensesLoading,
     TResult? Function()? fetchRevenueLoading,
-    TResult? Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult? Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult? Function(String message)? error,
@@ -2520,8 +2524,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult Function()? addExpensesLoading,
     TResult Function()? fetchExpensesLoading,
     TResult Function()? fetchRevenueLoading,
-    TResult Function(List<dynamic> expenses)? fetchExpensesSuccess,
-    TResult Function(List<dynamic> revenues)? fetchRevenueSuccess,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
     TResult Function(String message)? error,

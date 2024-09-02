@@ -13,49 +13,50 @@ class ExpensesBloc extends Bloc<ExpensesEvent, ExpensesState> {
     required this.fetchExpenses,
     required this.fetchRevenues,
   }) : super(const ExpensesState.initial()) {
-    on<FetchFoodExpensesEvent>(_fetchFoodExpenses);
-    on<FetchHouseholdExpensesEvent>(_fetchHouseholdExpenses);
-    on<FetchTransportExpensesEvent>(_fetchTransportExpenses);
+    on<FetchExpensesEvent>(_fetchExpenses);
+    // on<FetchHouseholdExpensesEvent>(_fetchHouseholdExpenses);
+    // on<FetchTransportExpensesEvent>(_fetchTransportExpenses);
   }
 
-  void _fetchFoodExpenses(FetchFoodExpensesEvent event, Emitter<ExpensesState> emit) async {
-    emit(const ExpensesState.fetchFoodExpensesLoading());
+  void _fetchExpenses(FetchExpensesEvent event, Emitter<ExpensesState> emit) async {
+    emit(const ExpensesState.fetchExpensesLoading());
 
     final result = await fetchExpenses(const NoParam());
 
     result.fold(
       (l) => emit(ExpensesState.error(l.message)),
-      (r) => emit(
-        ExpensesState.fetchFoodExpensesSuccess(r.where((e) => e.category == "Food").toList()),
-      ),
+      (r) {
+        print(".......... we are getting this as first ${r.first}");
+        emit(ExpensesState.fetchExpensesSuccess(r));
+      },
     );
   }
 
-  void _fetchTransportExpenses(FetchTransportExpensesEvent event, Emitter<ExpensesState> emit) async {
-    emit(const ExpensesState.fetchTransportExpensesLoading());
+  // void _fetchTransportExpenses(FetchTransportExpensesEvent event, Emitter<ExpensesState> emit) async {
+  //   emit(const ExpensesState.fetchTransportExpensesLoading());
 
-    final result = await fetchExpenses(const NoParam());
+  //   final result = await fetchExpenses(const NoParam());
 
-    result.fold(
-      (l) => emit(ExpensesState.error(l.message)),
-      (r) => emit(
-        ExpensesState.fetchTransportExpensesSuccess(r.where((e) => e.category == "Transport").toList()),
-      ),
-    );
-  }
+  //   result.fold(
+  //     (l) => emit(ExpensesState.error(l.message)),
+  //     (r) => emit(
+  //       ExpensesState.fetchTransportExpensesSuccess(r.where((e) => e.category == "Transport").toList()),
+  //     ),
+  //   );
+  // }
 
-  void _fetchHouseholdExpenses(FetchHouseholdExpensesEvent event, Emitter<ExpensesState> emit) async {
-    emit(const ExpensesState.fetchHouseholdExpensesLoading());
+  // void _fetchHouseholdExpenses(FetchHouseholdExpensesEvent event, Emitter<ExpensesState> emit) async {
+  //   emit(const ExpensesState.fetchHouseholdExpensesLoading());
 
-    final result = await fetchExpenses(const NoParam());
+  //   final result = await fetchExpenses(const NoParam());
 
-    result.fold(
-      (l) => emit(ExpensesState.error(l.message)),
-      (r) => emit(
-        ExpensesState.fetchHouseholdExpensesSuccess(
-          r.where((e) => e.category == "Household").toList(),
-        ),
-      ),
-    );
-  }
+  //   result.fold(
+  //     (l) => emit(ExpensesState.error(l.message)),
+  //     (r) => emit(
+  //       ExpensesState.fetchHouseholdExpensesSuccess(
+  //         r.where((e) => e.category == "Household").toList(),
+  //       ),
+  //     ),
+  //   );
+  // }
 }

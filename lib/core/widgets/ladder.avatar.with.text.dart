@@ -32,7 +32,7 @@ class _LadderAvatarWithTextState extends State<LadderAvatarWithText> {
       builder: (_, state) {
         final profileImagePath = state.maybeMap(
           orElse: () => null,
-          fetchUserProfileSuccess: (state) => state.profile.profileFilePath,
+          fetchUserProfileSuccess: (state) => state.profile.profileUrl,
         );
 
         return Row(

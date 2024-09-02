@@ -13,7 +13,7 @@ class FetchTransactions implements Usecase<List<dynamic>, NoParam> {
     try {
       final result = await _datasource.fetchTransations();
       return Right(result);
-    } on HiveFailure catch (e) {
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }

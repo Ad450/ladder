@@ -19,38 +19,24 @@ mixin _$ExpensesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function() fetchExpensesLoading,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function()? fetchExpensesLoading,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function()? fetchExpensesLoading,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -58,54 +44,30 @@ mixin _$ExpensesState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
+    required TResult Function(_ExpensesStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_ExpensesStateFetchExpensesLoading value)
+        fetchExpensesLoading,
     required TResult Function(_ExpensesStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult? Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult? Function(_ExpensesStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult Function(_ExpensesStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -170,14 +132,8 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function() fetchExpensesLoading,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -187,12 +143,8 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function()? fetchExpensesLoading,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -202,12 +154,8 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function()? fetchExpensesLoading,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -221,18 +169,10 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
+    required TResult Function(_ExpensesStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_ExpensesStateFetchExpensesLoading value)
+        fetchExpensesLoading,
     required TResult Function(_ExpensesStateError value) error,
   }) {
     return initial(this);
@@ -242,18 +182,10 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult? Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult? Function(_ExpensesStateError value)? error,
   }) {
     return initial?.call(this);
@@ -263,18 +195,10 @@ class _$ExpensesStateInitialImpl implements _ExpensesStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult Function(_ExpensesStateError value)? error,
     required TResult orElse(),
   }) {
@@ -290,23 +214,23 @@ abstract class _ExpensesStateInitial implements ExpensesState {
 }
 
 /// @nodoc
-abstract class _$$ExpensesStateFetchFoodExpensesSuccessImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchFoodExpensesSuccessImplCopyWith(
-          _$ExpensesStateFetchFoodExpensesSuccessImpl value,
-          $Res Function(_$ExpensesStateFetchFoodExpensesSuccessImpl) then) =
-      __$$ExpensesStateFetchFoodExpensesSuccessImplCopyWithImpl<$Res>;
+abstract class _$$ExpensesStateFetchExpensesSuccessImplCopyWith<$Res> {
+  factory _$$ExpensesStateFetchExpensesSuccessImplCopyWith(
+          _$ExpensesStateFetchExpensesSuccessImpl value,
+          $Res Function(_$ExpensesStateFetchExpensesSuccessImpl) then) =
+      __$$ExpensesStateFetchExpensesSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<dynamic> expenses});
+  $Res call({List<ExpenseModel> expenses});
 }
 
 /// @nodoc
-class __$$ExpensesStateFetchFoodExpensesSuccessImplCopyWithImpl<$Res>
+class __$$ExpensesStateFetchExpensesSuccessImplCopyWithImpl<$Res>
     extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchFoodExpensesSuccessImpl>
-    implements _$$ExpensesStateFetchFoodExpensesSuccessImplCopyWith<$Res> {
-  __$$ExpensesStateFetchFoodExpensesSuccessImplCopyWithImpl(
-      _$ExpensesStateFetchFoodExpensesSuccessImpl _value,
-      $Res Function(_$ExpensesStateFetchFoodExpensesSuccessImpl) _then)
+        _$ExpensesStateFetchExpensesSuccessImpl>
+    implements _$$ExpensesStateFetchExpensesSuccessImplCopyWith<$Res> {
+  __$$ExpensesStateFetchExpensesSuccessImplCopyWithImpl(
+      _$ExpensesStateFetchExpensesSuccessImpl _value,
+      $Res Function(_$ExpensesStateFetchExpensesSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -314,26 +238,26 @@ class __$$ExpensesStateFetchFoodExpensesSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? expenses = null,
   }) {
-    return _then(_$ExpensesStateFetchFoodExpensesSuccessImpl(
+    return _then(_$ExpensesStateFetchExpensesSuccessImpl(
       null == expenses
           ? _value._expenses
           : expenses // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<ExpenseModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ExpensesStateFetchFoodExpensesSuccessImpl
-    implements _ExpensesStateFetchFoodExpensesSuccess {
-  const _$ExpensesStateFetchFoodExpensesSuccessImpl(
-      final List<dynamic> expenses)
+class _$ExpensesStateFetchExpensesSuccessImpl
+    implements _ExpensesStateFetchExpensesSuccess {
+  const _$ExpensesStateFetchExpensesSuccessImpl(
+      final List<ExpenseModel> expenses)
       : _expenses = expenses;
 
-  final List<dynamic> _expenses;
+  final List<ExpenseModel> _expenses;
   @override
-  List<dynamic> get expenses {
+  List<ExpenseModel> get expenses {
     if (_expenses is EqualUnmodifiableListView) return _expenses;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_expenses);
@@ -341,14 +265,14 @@ class _$ExpensesStateFetchFoodExpensesSuccessImpl
 
   @override
   String toString() {
-    return 'ExpensesState.fetchFoodExpensesSuccess(expenses: $expenses)';
+    return 'ExpensesState.fetchExpensesSuccess(expenses: $expenses)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchFoodExpensesSuccessImpl &&
+            other is _$ExpensesStateFetchExpensesSuccessImpl &&
             const DeepCollectionEquality().equals(other._expenses, _expenses));
   }
 
@@ -359,58 +283,44 @@ class _$ExpensesStateFetchFoodExpensesSuccessImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ExpensesStateFetchFoodExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchFoodExpensesSuccessImpl>
-      get copyWith => __$$ExpensesStateFetchFoodExpensesSuccessImplCopyWithImpl<
-          _$ExpensesStateFetchFoodExpensesSuccessImpl>(this, _$identity);
+  _$$ExpensesStateFetchExpensesSuccessImplCopyWith<
+          _$ExpensesStateFetchExpensesSuccessImpl>
+      get copyWith => __$$ExpensesStateFetchExpensesSuccessImplCopyWithImpl<
+          _$ExpensesStateFetchExpensesSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function() fetchExpensesLoading,
     required TResult Function(String message) error,
   }) {
-    return fetchFoodExpensesSuccess(expenses);
+    return fetchExpensesSuccess(expenses);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function()? fetchExpensesLoading,
     TResult? Function(String message)? error,
   }) {
-    return fetchFoodExpensesSuccess?.call(expenses);
+    return fetchExpensesSuccess?.call(expenses);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function()? fetchExpensesLoading,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (fetchFoodExpensesSuccess != null) {
-      return fetchFoodExpensesSuccess(expenses);
+    if (fetchExpensesSuccess != null) {
+      return fetchExpensesSuccess(expenses);
     }
     return orElse();
   }
@@ -419,117 +329,93 @@ class _$ExpensesStateFetchFoodExpensesSuccessImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
+    required TResult Function(_ExpensesStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_ExpensesStateFetchExpensesLoading value)
+        fetchExpensesLoading,
     required TResult Function(_ExpensesStateError value) error,
   }) {
-    return fetchFoodExpensesSuccess(this);
+    return fetchExpensesSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult? Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult? Function(_ExpensesStateError value)? error,
   }) {
-    return fetchFoodExpensesSuccess?.call(this);
+    return fetchExpensesSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult Function(_ExpensesStateError value)? error,
     required TResult orElse(),
   }) {
-    if (fetchFoodExpensesSuccess != null) {
-      return fetchFoodExpensesSuccess(this);
+    if (fetchExpensesSuccess != null) {
+      return fetchExpensesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _ExpensesStateFetchFoodExpensesSuccess implements ExpensesState {
-  const factory _ExpensesStateFetchFoodExpensesSuccess(
-          final List<dynamic> expenses) =
-      _$ExpensesStateFetchFoodExpensesSuccessImpl;
+abstract class _ExpensesStateFetchExpensesSuccess implements ExpensesState {
+  const factory _ExpensesStateFetchExpensesSuccess(
+          final List<ExpenseModel> expenses) =
+      _$ExpensesStateFetchExpensesSuccessImpl;
 
-  List<dynamic> get expenses;
+  List<ExpenseModel> get expenses;
   @JsonKey(ignore: true)
-  _$$ExpensesStateFetchFoodExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchFoodExpensesSuccessImpl>
+  _$$ExpensesStateFetchExpensesSuccessImplCopyWith<
+          _$ExpensesStateFetchExpensesSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ExpensesStateFetchFoodExpensesLoadingImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchFoodExpensesLoadingImplCopyWith(
-          _$ExpensesStateFetchFoodExpensesLoadingImpl value,
-          $Res Function(_$ExpensesStateFetchFoodExpensesLoadingImpl) then) =
-      __$$ExpensesStateFetchFoodExpensesLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ExpensesStateFetchExpensesLoadingImplCopyWith<$Res> {
+  factory _$$ExpensesStateFetchExpensesLoadingImplCopyWith(
+          _$ExpensesStateFetchExpensesLoadingImpl value,
+          $Res Function(_$ExpensesStateFetchExpensesLoadingImpl) then) =
+      __$$ExpensesStateFetchExpensesLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ExpensesStateFetchFoodExpensesLoadingImplCopyWithImpl<$Res>
+class __$$ExpensesStateFetchExpensesLoadingImplCopyWithImpl<$Res>
     extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchFoodExpensesLoadingImpl>
-    implements _$$ExpensesStateFetchFoodExpensesLoadingImplCopyWith<$Res> {
-  __$$ExpensesStateFetchFoodExpensesLoadingImplCopyWithImpl(
-      _$ExpensesStateFetchFoodExpensesLoadingImpl _value,
-      $Res Function(_$ExpensesStateFetchFoodExpensesLoadingImpl) _then)
+        _$ExpensesStateFetchExpensesLoadingImpl>
+    implements _$$ExpensesStateFetchExpensesLoadingImplCopyWith<$Res> {
+  __$$ExpensesStateFetchExpensesLoadingImplCopyWithImpl(
+      _$ExpensesStateFetchExpensesLoadingImpl _value,
+      $Res Function(_$ExpensesStateFetchExpensesLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ExpensesStateFetchFoodExpensesLoadingImpl
-    implements _ExpensesStateFetchFoodExpensesLoading {
-  const _$ExpensesStateFetchFoodExpensesLoadingImpl();
+class _$ExpensesStateFetchExpensesLoadingImpl
+    implements _ExpensesStateFetchExpensesLoading {
+  const _$ExpensesStateFetchExpensesLoadingImpl();
 
   @override
   String toString() {
-    return 'ExpensesState.fetchFoodExpensesLoading()';
+    return 'ExpensesState.fetchExpensesLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchFoodExpensesLoadingImpl);
+            other is _$ExpensesStateFetchExpensesLoadingImpl);
   }
 
   @override
@@ -539,49 +425,35 @@ class _$ExpensesStateFetchFoodExpensesLoadingImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function() fetchExpensesLoading,
     required TResult Function(String message) error,
   }) {
-    return fetchFoodExpensesLoading();
+    return fetchExpensesLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function()? fetchExpensesLoading,
     TResult? Function(String message)? error,
   }) {
-    return fetchFoodExpensesLoading?.call();
+    return fetchExpensesLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function()? fetchExpensesLoading,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (fetchFoodExpensesLoading != null) {
-      return fetchFoodExpensesLoading();
+    if (fetchExpensesLoading != null) {
+      return fetchExpensesLoading();
     }
     return orElse();
   }
@@ -590,825 +462,49 @@ class _$ExpensesStateFetchFoodExpensesLoadingImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
+    required TResult Function(_ExpensesStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_ExpensesStateFetchExpensesLoading value)
+        fetchExpensesLoading,
     required TResult Function(_ExpensesStateError value) error,
   }) {
-    return fetchFoodExpensesLoading(this);
+    return fetchExpensesLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult? Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult? Function(_ExpensesStateError value)? error,
   }) {
-    return fetchFoodExpensesLoading?.call(this);
+    return fetchExpensesLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult Function(_ExpensesStateError value)? error,
     required TResult orElse(),
   }) {
-    if (fetchFoodExpensesLoading != null) {
-      return fetchFoodExpensesLoading(this);
+    if (fetchExpensesLoading != null) {
+      return fetchExpensesLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class _ExpensesStateFetchFoodExpensesLoading implements ExpensesState {
-  const factory _ExpensesStateFetchFoodExpensesLoading() =
-      _$ExpensesStateFetchFoodExpensesLoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$ExpensesStateFetchTransportExpensesSuccessImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchTransportExpensesSuccessImplCopyWith(
-          _$ExpensesStateFetchTransportExpensesSuccessImpl value,
-          $Res Function(_$ExpensesStateFetchTransportExpensesSuccessImpl)
-              then) =
-      __$$ExpensesStateFetchTransportExpensesSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<dynamic> expenses});
-}
-
-/// @nodoc
-class __$$ExpensesStateFetchTransportExpensesSuccessImplCopyWithImpl<$Res>
-    extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchTransportExpensesSuccessImpl>
-    implements _$$ExpensesStateFetchTransportExpensesSuccessImplCopyWith<$Res> {
-  __$$ExpensesStateFetchTransportExpensesSuccessImplCopyWithImpl(
-      _$ExpensesStateFetchTransportExpensesSuccessImpl _value,
-      $Res Function(_$ExpensesStateFetchTransportExpensesSuccessImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? expenses = null,
-  }) {
-    return _then(_$ExpensesStateFetchTransportExpensesSuccessImpl(
-      null == expenses
-          ? _value._expenses
-          : expenses // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ExpensesStateFetchTransportExpensesSuccessImpl
-    implements _ExpensesStateFetchTransportExpensesSuccess {
-  const _$ExpensesStateFetchTransportExpensesSuccessImpl(
-      final List<dynamic> expenses)
-      : _expenses = expenses;
-
-  final List<dynamic> _expenses;
-  @override
-  List<dynamic> get expenses {
-    if (_expenses is EqualUnmodifiableListView) return _expenses;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_expenses);
-  }
-
-  @override
-  String toString() {
-    return 'ExpensesState.fetchTransportExpensesSuccess(expenses: $expenses)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchTransportExpensesSuccessImpl &&
-            const DeepCollectionEquality().equals(other._expenses, _expenses));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_expenses));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ExpensesStateFetchTransportExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchTransportExpensesSuccessImpl>
-      get copyWith =>
-          __$$ExpensesStateFetchTransportExpensesSuccessImplCopyWithImpl<
-                  _$ExpensesStateFetchTransportExpensesSuccessImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
-    required TResult Function(String message) error,
-  }) {
-    return fetchTransportExpensesSuccess(expenses);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
-    TResult? Function(String message)? error,
-  }) {
-    return fetchTransportExpensesSuccess?.call(expenses);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchTransportExpensesSuccess != null) {
-      return fetchTransportExpensesSuccess(expenses);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
-    required TResult Function(_ExpensesStateError value) error,
-  }) {
-    return fetchTransportExpensesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult? Function(_ExpensesStateError value)? error,
-  }) {
-    return fetchTransportExpensesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult Function(_ExpensesStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchTransportExpensesSuccess != null) {
-      return fetchTransportExpensesSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExpensesStateFetchTransportExpensesSuccess
-    implements ExpensesState {
-  const factory _ExpensesStateFetchTransportExpensesSuccess(
-          final List<dynamic> expenses) =
-      _$ExpensesStateFetchTransportExpensesSuccessImpl;
-
-  List<dynamic> get expenses;
-  @JsonKey(ignore: true)
-  _$$ExpensesStateFetchTransportExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchTransportExpensesSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ExpensesStateFetchTransportExpensesLoadingImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchTransportExpensesLoadingImplCopyWith(
-          _$ExpensesStateFetchTransportExpensesLoadingImpl value,
-          $Res Function(_$ExpensesStateFetchTransportExpensesLoadingImpl)
-              then) =
-      __$$ExpensesStateFetchTransportExpensesLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ExpensesStateFetchTransportExpensesLoadingImplCopyWithImpl<$Res>
-    extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchTransportExpensesLoadingImpl>
-    implements _$$ExpensesStateFetchTransportExpensesLoadingImplCopyWith<$Res> {
-  __$$ExpensesStateFetchTransportExpensesLoadingImplCopyWithImpl(
-      _$ExpensesStateFetchTransportExpensesLoadingImpl _value,
-      $Res Function(_$ExpensesStateFetchTransportExpensesLoadingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ExpensesStateFetchTransportExpensesLoadingImpl
-    implements _ExpensesStateFetchTransportExpensesLoading {
-  const _$ExpensesStateFetchTransportExpensesLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ExpensesState.fetchTransportExpensesLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchTransportExpensesLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
-    required TResult Function(String message) error,
-  }) {
-    return fetchTransportExpensesLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
-    TResult? Function(String message)? error,
-  }) {
-    return fetchTransportExpensesLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchTransportExpensesLoading != null) {
-      return fetchTransportExpensesLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
-    required TResult Function(_ExpensesStateError value) error,
-  }) {
-    return fetchTransportExpensesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult? Function(_ExpensesStateError value)? error,
-  }) {
-    return fetchTransportExpensesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult Function(_ExpensesStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchTransportExpensesLoading != null) {
-      return fetchTransportExpensesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExpensesStateFetchTransportExpensesLoading
-    implements ExpensesState {
-  const factory _ExpensesStateFetchTransportExpensesLoading() =
-      _$ExpensesStateFetchTransportExpensesLoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWith(
-          _$ExpensesStateFetchHouseholdExpensesSuccessImpl value,
-          $Res Function(_$ExpensesStateFetchHouseholdExpensesSuccessImpl)
-              then) =
-      __$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<dynamic> expenses});
-}
-
-/// @nodoc
-class __$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWithImpl<$Res>
-    extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchHouseholdExpensesSuccessImpl>
-    implements _$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWith<$Res> {
-  __$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWithImpl(
-      _$ExpensesStateFetchHouseholdExpensesSuccessImpl _value,
-      $Res Function(_$ExpensesStateFetchHouseholdExpensesSuccessImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? expenses = null,
-  }) {
-    return _then(_$ExpensesStateFetchHouseholdExpensesSuccessImpl(
-      null == expenses
-          ? _value._expenses
-          : expenses // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ExpensesStateFetchHouseholdExpensesSuccessImpl
-    implements _ExpensesStateFetchHouseholdExpensesSuccess {
-  const _$ExpensesStateFetchHouseholdExpensesSuccessImpl(
-      final List<dynamic> expenses)
-      : _expenses = expenses;
-
-  final List<dynamic> _expenses;
-  @override
-  List<dynamic> get expenses {
-    if (_expenses is EqualUnmodifiableListView) return _expenses;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_expenses);
-  }
-
-  @override
-  String toString() {
-    return 'ExpensesState.fetchHouseholdExpensesSuccess(expenses: $expenses)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchHouseholdExpensesSuccessImpl &&
-            const DeepCollectionEquality().equals(other._expenses, _expenses));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_expenses));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchHouseholdExpensesSuccessImpl>
-      get copyWith =>
-          __$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWithImpl<
-                  _$ExpensesStateFetchHouseholdExpensesSuccessImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
-    required TResult Function(String message) error,
-  }) {
-    return fetchHouseholdExpensesSuccess(expenses);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
-    TResult? Function(String message)? error,
-  }) {
-    return fetchHouseholdExpensesSuccess?.call(expenses);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchHouseholdExpensesSuccess != null) {
-      return fetchHouseholdExpensesSuccess(expenses);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
-    required TResult Function(_ExpensesStateError value) error,
-  }) {
-    return fetchHouseholdExpensesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult? Function(_ExpensesStateError value)? error,
-  }) {
-    return fetchHouseholdExpensesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult Function(_ExpensesStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchHouseholdExpensesSuccess != null) {
-      return fetchHouseholdExpensesSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExpensesStateFetchHouseholdExpensesSuccess
-    implements ExpensesState {
-  const factory _ExpensesStateFetchHouseholdExpensesSuccess(
-          final List<dynamic> expenses) =
-      _$ExpensesStateFetchHouseholdExpensesSuccessImpl;
-
-  List<dynamic> get expenses;
-  @JsonKey(ignore: true)
-  _$$ExpensesStateFetchHouseholdExpensesSuccessImplCopyWith<
-          _$ExpensesStateFetchHouseholdExpensesSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWith<$Res> {
-  factory _$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWith(
-          _$ExpensesStateFetchHouseholdExpensesLoadingImpl value,
-          $Res Function(_$ExpensesStateFetchHouseholdExpensesLoadingImpl)
-              then) =
-      __$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWithImpl<$Res>
-    extends _$ExpensesStateCopyWithImpl<$Res,
-        _$ExpensesStateFetchHouseholdExpensesLoadingImpl>
-    implements _$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWith<$Res> {
-  __$$ExpensesStateFetchHouseholdExpensesLoadingImplCopyWithImpl(
-      _$ExpensesStateFetchHouseholdExpensesLoadingImpl _value,
-      $Res Function(_$ExpensesStateFetchHouseholdExpensesLoadingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ExpensesStateFetchHouseholdExpensesLoadingImpl
-    implements _ExpensesStateFetchHouseholdExpensesLoading {
-  const _$ExpensesStateFetchHouseholdExpensesLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ExpensesState.fetchHouseholdExpensesLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExpensesStateFetchHouseholdExpensesLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
-    required TResult Function(String message) error,
-  }) {
-    return fetchHouseholdExpensesLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
-    TResult? Function(String message)? error,
-  }) {
-    return fetchHouseholdExpensesLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchHouseholdExpensesLoading != null) {
-      return fetchHouseholdExpensesLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
-    required TResult Function(_ExpensesStateError value) error,
-  }) {
-    return fetchHouseholdExpensesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult? Function(_ExpensesStateError value)? error,
-  }) {
-    return fetchHouseholdExpensesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
-    TResult Function(_ExpensesStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (fetchHouseholdExpensesLoading != null) {
-      return fetchHouseholdExpensesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExpensesStateFetchHouseholdExpensesLoading
-    implements ExpensesState {
-  const factory _ExpensesStateFetchHouseholdExpensesLoading() =
-      _$ExpensesStateFetchHouseholdExpensesLoadingImpl;
+abstract class _ExpensesStateFetchExpensesLoading implements ExpensesState {
+  const factory _ExpensesStateFetchExpensesLoading() =
+      _$ExpensesStateFetchExpensesLoadingImpl;
 }
 
 /// @nodoc
@@ -1477,14 +573,8 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> expenses) fetchFoodExpensesSuccess,
-    required TResult Function() fetchFoodExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchTransportExpensesSuccess,
-    required TResult Function() fetchTransportExpensesLoading,
-    required TResult Function(List<dynamic> expenses)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function() fetchHouseholdExpensesLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function() fetchExpensesLoading,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -1494,12 +584,8 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult? Function()? fetchFoodExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult? Function()? fetchTransportExpensesLoading,
-    TResult? Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult? Function()? fetchHouseholdExpensesLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function()? fetchExpensesLoading,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1509,12 +595,8 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> expenses)? fetchFoodExpensesSuccess,
-    TResult Function()? fetchFoodExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchTransportExpensesSuccess,
-    TResult Function()? fetchTransportExpensesLoading,
-    TResult Function(List<dynamic> expenses)? fetchHouseholdExpensesSuccess,
-    TResult Function()? fetchHouseholdExpensesLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function()? fetchExpensesLoading,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1528,18 +610,10 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExpensesStateInitial value) initial,
-    required TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)
-        fetchFoodExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchFoodExpensesLoading value)
-        fetchFoodExpensesLoading,
-    required TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)
-        fetchTransportExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchTransportExpensesLoading value)
-        fetchTransportExpensesLoading,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)
-        fetchHouseholdExpensesSuccess,
-    required TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)
-        fetchHouseholdExpensesLoading,
+    required TResult Function(_ExpensesStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_ExpensesStateFetchExpensesLoading value)
+        fetchExpensesLoading,
     required TResult Function(_ExpensesStateError value) error,
   }) {
     return error(this);
@@ -1549,18 +623,10 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExpensesStateInitial value)? initial,
-    TResult? Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult? Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult? Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult? Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult? Function(_ExpensesStateError value)? error,
   }) {
     return error?.call(this);
@@ -1570,18 +636,10 @@ class _$ExpensesStateErrorImpl implements _ExpensesStateError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExpensesStateInitial value)? initial,
-    TResult Function(_ExpensesStateFetchFoodExpensesSuccess value)?
-        fetchFoodExpensesSuccess,
-    TResult Function(_ExpensesStateFetchFoodExpensesLoading value)?
-        fetchFoodExpensesLoading,
-    TResult Function(_ExpensesStateFetchTransportExpensesSuccess value)?
-        fetchTransportExpensesSuccess,
-    TResult Function(_ExpensesStateFetchTransportExpensesLoading value)?
-        fetchTransportExpensesLoading,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesSuccess value)?
-        fetchHouseholdExpensesSuccess,
-    TResult Function(_ExpensesStateFetchHouseholdExpensesLoading value)?
-        fetchHouseholdExpensesLoading,
+    TResult Function(_ExpensesStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_ExpensesStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
     TResult Function(_ExpensesStateError value)? error,
     required TResult orElse(),
   }) {

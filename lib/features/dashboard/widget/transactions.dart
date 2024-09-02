@@ -69,10 +69,10 @@ class _TransactionsState extends State<Transactions> {
               return state.revenues
                   .map(
                     (e) => TransactionWidget(
-                      title: e.name,
+                      title: e.nameOfRevenue,
                       category: "Revenue",
                       amount: e.amount.toString(),
-                      date: e.date.toString().split(" ")[0],
+                      date: DateTime.now().toString().split(" ")[0],
                     ),
                   )
                   .toList();

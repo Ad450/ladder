@@ -11,13 +11,13 @@ class CheckAuthStaus implements Usecase<VoidType, NoParam> {
   @override
   Future<Either<UIError, VoidType>> call(NoParam param) async {
     try {
-      final id = await _hiveStore.readItem("uid", "uid");
-
+      final id = await _hiveStore.readItem("accessToken", "accessToken");
+      print("access token is ......$id");
       if (id != null) {
         return const Right(VoidType());
       }
-      throw HiveFailure("no user found");
-    } on HiveFailure catch (e) {
+      throw ApiFailure("no user found");
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }

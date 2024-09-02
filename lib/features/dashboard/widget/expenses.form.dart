@@ -19,17 +19,13 @@ class ExpensesForm extends StatefulWidget {
 }
 
 class _ExpensesFormState extends State<ExpensesForm> {
-  String _selectedChip = "";
-  final Set<String> _items = {"Transport", "Household", "Food"};
-
   void validateAndAddExpenses() {
     final amount = context.read<DashboardBloc>().expensesAmountController.value.text;
     final name = context.read<DashboardBloc>().expensesNameController.value.text;
+    final category = context.read<DashboardBloc>().expenseCategoryController.value.text;
 
-    if (name.isNotEmpty && amount.isNotEmpty && _selectedChip.isNotEmpty) {
-      context.read<DashboardBloc>().add(
-            AddExpensesEvent(category: _selectedChip),
-          );
+    if (name.isNotEmpty && amount.isNotEmpty && category.isNotEmpty) {
+      context.read<DashboardBloc>().add(AddExpensesEvent());
     } else {
       showToast("All fields are requird");
     }
@@ -70,21 +66,19 @@ class _ExpensesFormState extends State<ExpensesForm> {
           inputType: TextInputType.number,
         ),
         SizedBox(height: 16.h),
-        Wrap(
-          spacing: 8.0,
-          runSpacing: 4.0,
-          children: _items.map((item) {
-            return ChoiceChip(
-              label: Text(item),
-              selectedColor: ColorName.primaryAccent,
-              selected: _selectedChip == item,
-              onSelected: (bool selectedChip) {
-                setState(() {
-                  _selectedChip = item;
-                });
-              },
-            );
-          }).toList(),
+        Text(
+          "Category",
+          style: context.appTheme.textTheme.bodySmall?.copyWith(
+            fontSize: 16,
+            color: ColorName.text,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        SizedBox(height: 16.h),
+        LadderTextfield(
+          controller: context.read<DashboardBloc>().expenseCategoryController,
+          hintText: "Category",
+          inputType: TextInputType.text,
         ),
         SizedBox(height: 100.h),
         BlocConsumer<DashboardBloc, DashboardState>(

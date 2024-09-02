@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ladder/api/models/metrics.dart';
+import 'package:ladder/api/models/metrics.model.dart';
 
 part 'metrics.state.freezed.dart';
 

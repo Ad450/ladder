@@ -1,49 +1,51 @@
-import 'package:ladder/api/models/revenue.dart';
-import 'package:ladder/api/models/transactions.dart';
-import 'package:ladder/api/store/ladder.store.dart';
+import 'package:ladder/api/models/revenue.model.dart';
+import 'package:ladder/api/network/network.service.dart';
 import 'package:ladder/api/utils/api.errors.dart';
 
 abstract class RevenueDatasource {
-  Future<List<dynamic>> fetchRevenues();
+  Future<List<RevenueModel>> fetchRevenues();
   Future<void> addRevenue(RevenueModel model);
 }
 
 class RevenueDatasourceImpl implements RevenueDatasource {
-  final HiveStore _hiveStore;
-  final box = HiveBoxNames.revenues.name;
-  final transactionBox = HiveBoxNames.transactions.name;
+  final NetworkService networkService;
 
-  RevenueDatasourceImpl(this._hiveStore);
+  RevenueDatasourceImpl(this.networkService);
 
   @override
   Future<void> addRevenue(RevenueModel model) async {
+    final data = {"nameOfRevenue": model.nameOfRevenue, "amount": model.amount};
     try {
-      await _hiveStore.saveItem(
-        model,
-        box,
-        key: model.name.replaceAll(" ", ""),
-      );
-      await _hiveStore.saveItem(
-          TransactionModel.build(
-            uid: model.uid,
-            name: model.name,
-            amount: model.amount,
-            category: "Revenue",
-          ),
-          transactionBox,
-          key: model.name.replaceAll(" ", ""));
+      final res = await networkService.post("/user/income", data: data);
+      if (res.data != null) {
+        return;
+      }
+      throw ApiFailure(res.code!.toString());
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 
   @override
-  Future<List<dynamic>> fetchRevenues() async {
+  Future<List<RevenueModel>> fetchRevenues() async {
     try {
-      final revenues = await _hiveStore.readAll(box);
-      return revenues;
+      final res = await networkService.getHttp("/user/income");
+      if (res.data != null) {
+        print("...... i am in this revenue fetch  ${res.data}");
+        return (res.data!["data"] as List).map(
+          (e) {
+            print(".....type of revenue amount ${e["amount"].runtimeType}");
+
+            return RevenueModel(
+              nameOfRevenue: e["nameOfRevenue"],
+              amount: e["amount"],
+            );
+          },
+        ).toList();
+      }
+      throw ApiFailure(res.code!.toString());
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 }

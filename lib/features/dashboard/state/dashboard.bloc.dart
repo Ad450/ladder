@@ -19,6 +19,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   final TextEditingController expensesAmountController = TextEditingController();
   final TextEditingController expensesNameController = TextEditingController();
+  final TextEditingController expenseCategoryController = TextEditingController();
 
   final TextEditingController revenueAmountController = TextEditingController();
   final TextEditingController revenueNameController = TextEditingController();
@@ -32,7 +33,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   }) : super(const DashboardState.initial()) {
     on<AddExpensesEvent>(_addExpenses);
     on<AddRevenueEvent>(_addRevenue);
-    on<FetchExpensesEvent>(_fetchExpenses);
+    // on<FetchExpensesEvent>(_fetchExpenses);
     on<FetchRevenuesEvent>(_fetchRevenue);
 
     on<FetchTransactionsEvent>(_fetchTransactions);
@@ -44,7 +45,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     final result = await addExpenses(AddExpensesParam(
       name: expensesNameController.value.text,
       amount: expensesAmountController.value.text,
-      category: event.category,
+      category: expenseCategoryController.value.text,
     ));
 
     result.fold(
@@ -67,16 +68,16 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     );
   }
 
-  void _fetchExpenses(FetchExpensesEvent event, Emitter<DashboardState> emit) async {
-    emit(const DashboardState.fetchExpensesLoading());
+  // void _fetchExpenses(FetchExpensesEvent event, Emitter<DashboardState> emit) async {
+  //   emit(const DashboardState.fetchExpensesLoading());
 
-    final result = await fetchExpenses(const NoParam());
+  //   final result = await fetchExpenses(const NoParam());
 
-    result.fold(
-      (l) => emit(DashboardState.error(l.message)),
-      (r) => emit(DashboardState.fetchExpensesSuccess(r)),
-    );
-  }
+  //   result.fold(
+  //     (l) => emit(DashboardState.error(l.message)),
+  //     (r) => emit(DashboardState.fetchExpensesSuccess(r)),
+  //   );
+  // }
 
   void _fetchRevenue(FetchRevenuesEvent event, Emitter<DashboardState> emit) async {
     emit(const DashboardState.fetchRevenueLoading());

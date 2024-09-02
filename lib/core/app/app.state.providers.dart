@@ -46,7 +46,7 @@ final authBloc = BlocProvider(
     signin: locator.get<Signin>(),
     signup: locator.get<Signup>(),
     signout: locator.get<Signout>(),
-    updateUser: locator.get<UpdateUser>(),
+    // updateUser: locator.get<UpdateUser>(),
     checkAuthStaus: locator.get<CheckAuthStaus>(),
     fetchUserProfile: locator.get<FetchUserProfile>(),
   )..add(AppStartedEvent()),

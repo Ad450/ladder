@@ -26,7 +26,16 @@ class _GraphWidgetState extends State<GraphWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<MetricsBloc, MetricState>(
       builder: (_, state) => state.maybeMap(
-        orElse: () => SizedBox(height: 16.h),
+        orElse: () => SizedBox(
+          height: 70.h,
+          child: Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              Assets.images.wallet.path,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
         fetchMetricSuccess: (state) => state.metrics.totalTransactions == 0
             ? SizedBox(
                 height: 70.h,

@@ -1,48 +1,59 @@
-import 'package:flutter/material.dart';
-import 'package:ladder/api/models/expenses.dart';
-import 'package:ladder/api/models/transactions.dart';
-import 'package:ladder/api/store/ladder.store.dart';
+import 'package:ladder/api/models/expense.model.dart';
+import 'package:ladder/api/network/network.service.dart';
+
 import 'package:ladder/api/utils/api.errors.dart';
 
 abstract class ExpensesDatasource {
-  Future<List<dynamic>> fetchExpenses();
+  Future<List<ExpenseModel>> fetchExpenses();
   Future<void> addExpenses(ExpenseModel model);
 }
 
 class ExpensesDatasourceImpl implements ExpensesDatasource {
-  final HiveStore _hiveStore;
-  final box = HiveBoxNames.expenses.name;
-  final transactionBox = HiveBoxNames.transactions.name;
+  final NetworkService networkService;
 
-  ExpensesDatasourceImpl(this._hiveStore);
+  ExpensesDatasourceImpl(this.networkService);
 
   @override
   Future<void> addExpenses(ExpenseModel model) async {
-    debugPrint(".........key is here ... ${model.name.replaceAll(" ", "")}");
+    final data = {
+      "nameOfItem": model.nameOfItem,
+      "estimatedAmount": model.estimatedAmount.toString(),
+      "category": model.category,
+    };
     try {
-      await _hiveStore.saveItem(model, box, key: model.name.replaceAll(" ", ""));
-      await _hiveStore.saveItem(
-        TransactionModel.build(
-          uid: model.uid,
-          name: model.name,
-          amount: model.amount,
-          category: model.category,
-        ),
-        transactionBox,
-        key: model.name.replaceAll(" ", ""),
-      );
+      final res = await networkService.post("/user/expenditure", data: data);
+      if (res.data != null) {
+        return;
+      }
+      throw ApiFailure(res.code!.toString());
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 
   @override
-  Future<List<dynamic>> fetchExpenses() async {
+  Future<List<ExpenseModel>> fetchExpenses() async {
     try {
-      final expenses = await _hiveStore.readAll(box);
-      return expenses;
+      final res = await networkService.getHttp("/user/expenditure");
+      if (res.data != null) {
+        print("tried fetching expense here, ${res.data!["data"].first}");
+        return (res.data!["data"] as List)
+            // unnecessary filtering but doing that because I inserted an expense
+            // with null estimated value, api didnt reject it
+
+            .where((e) => e["estimatedAmount"] != null) // Filter out null estimatedAmount
+            .map(
+              (e) => ExpenseModel(
+                nameOfItem: e["nameOfItem"],
+                category: e["category"],
+                estimatedAmount: int.tryParse(e["estimatedAmount"].toString())!,
+              ),
+            )
+            .toList();
+      }
+      throw ApiFailure(res.code!.toString());
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 }

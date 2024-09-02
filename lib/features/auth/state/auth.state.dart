@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ladder/api/models/profile.dart';
+import 'package:ladder/api/models/user.model.dart';
 
 part 'auth.state.freezed.dart';
 
@@ -24,6 +24,6 @@ class AuthState with _$AuthState {
   const factory AuthState.userExists() = _AuthStateUserExists;
   const factory AuthState.newUser() = _AuthStateNewUser;
 
-  const factory AuthState.fetchUserProfileSuccess(ProfileModel profile) = _AuthStateFetchUserProfileSuccess;
+  const factory AuthState.fetchUserProfileSuccess(UserModel profile) = _AuthStateFetchUserProfileSuccess;
   const factory AuthState.fetchUserProfileLoading() = _AuthStateFetchUserProfileLoading;
 }

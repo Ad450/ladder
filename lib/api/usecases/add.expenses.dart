@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:ladder/api/datasources/expenses.datasource.dart';
-import 'package:ladder/api/models/expenses.dart';
+import 'package:ladder/api/models/expense.model.dart';
 import 'package:ladder/api/utils/api.errors.dart';
 import 'package:ladder/api/utils/helpers.dart';
 
@@ -13,15 +13,14 @@ class AddExpenses implements Usecase<VoidType, AddExpensesParam> {
   Future<Either<UIError, VoidType>> call(AddExpensesParam param) async {
     try {
       await _datasource.addExpenses(
-        ExpenseModel.build(
-          uid: "uid",
-          name: param.name,
-          amount: param.amount,
+        ExpenseModel(
+          nameOfItem: param.name,
+          estimatedAmount: int.parse(param.amount),
           category: param.category,
         ),
       );
       return const Right(VoidType());
-    } on HiveFailure catch (e) {
+    } on ApiFailure catch (e) {
       return Left(UIError(e.message));
     }
   }

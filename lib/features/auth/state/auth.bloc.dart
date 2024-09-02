@@ -5,7 +5,6 @@ import 'package:ladder/api/usecases/fetch.user.profile.dart';
 import 'package:ladder/api/usecases/signin.dart';
 import 'package:ladder/api/usecases/signout.dart';
 import 'package:ladder/api/usecases/signup.dart';
-import 'package:ladder/api/usecases/update.user.dart';
 import 'package:ladder/api/utils/helpers.dart';
 import 'package:ladder/features/auth/state/auth.event.dart';
 import 'package:ladder/features/auth/state/auth.state.dart';
@@ -14,7 +13,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final Signin signin;
   final Signup signup;
   final Signout signout;
-  final UpdateUser updateUser;
+  // final UpdateUser updateUser;
   final CheckAuthStaus checkAuthStaus;
   final FetchUserProfile fetchUserProfile;
 
@@ -30,13 +29,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required this.signin,
     required this.signup,
     required this.signout,
-    required this.updateUser,
+    // required this.updateUser,
     required this.checkAuthStaus,
     required this.fetchUserProfile,
   }) : super(const AuthState.initial()) {
     on<SignupEvent>(_signupUser);
     on<SigninEvent>(_signinUser);
-    on<UpdateUserEvent>(_updateUser);
+    // on<UpdateUserEvent>(_updateUser);
     on<SignoutEvent>(_signout);
     on<AppStartedEvent>(_checkAuthStatus);
     on<FetchUserProfileEvent>(_fetchUserProflie);
@@ -86,21 +85,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 
-  void _updateUser(UpdateUserEvent event, Emitter<AuthState> emit) async {
-    emit(const AuthState.updateUserSuccess());
+  // void _updateUser(UpdateUserEvent event, Emitter<AuthState> emit) async {
+  //   emit(const AuthState.updateUserSuccess());
 
-    final result = await updateUser(
-      UpdateUserParam(
-        name: updateUserNameController.value.text,
-        profileFilePath: event.profileFilePath,
-      ),
-    );
+  //   final result = await updateUser(
+  //     UpdateUserParam(
+  //       name: updateUserNameController.value.text,
+  //       profileFilePath: event.profileFilePath,
+  //     ),
+  //   );
 
-    result.fold(
-      (l) => emit(AuthState.error(l.message)),
-      (r) => emit(const AuthState.updateUserSuccess()),
-    );
-  }
+  //   result.fold(
+  //     (l) => emit(AuthState.error(l.message)),
+  //     (r) => emit(const AuthState.updateUserSuccess()),
+  //   );
+  // }
 
   void _checkAuthStatus(AppStartedEvent event, Emitter<AuthState> emit) async {
     final result = await checkAuthStaus(const NoParam());

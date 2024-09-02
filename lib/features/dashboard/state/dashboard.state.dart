@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ladder/api/models/expense.model.dart';
+import 'package:ladder/api/models/revenue.model.dart';
 part 'dashboard.state.freezed.dart';
 
 @freezed
@@ -14,8 +16,8 @@ class DashboardState with _$DashboardState {
   const factory DashboardState.fetchExpensesLoading() = _DashboardStateFetchExpensesLoading;
   const factory DashboardState.fetchRevenueLoading() = _DashboardStateFetchRevenueLoading;
 
-  const factory DashboardState.fetchExpensesSuccess(List<dynamic> expenses) = _DashboardStateFetchExpensesSuccess;
-  const factory DashboardState.fetchRevenueSuccess(List<dynamic> revenues) = _DashboardStateFetchRevenueSuccess;
+  const factory DashboardState.fetchExpensesSuccess(List<ExpenseModel> expenses) = _DashboardStateFetchExpensesSuccess;
+  const factory DashboardState.fetchRevenueSuccess(List<RevenueModel> revenues) = _DashboardStateFetchRevenueSuccess;
 
   const factory DashboardState.fetchTransactionLoading() = _DashboardStateFetchTransactionLoading;
   const factory DashboardState.fetchTransactionSuccess(List<dynamic> metrics) = _DashboardStateFetchTransactionSuccess;

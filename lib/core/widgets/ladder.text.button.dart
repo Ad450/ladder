@@ -20,7 +20,7 @@ class LadderTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isBusy
-        ? const CupertinoActivityIndicator()
+        ? const Align(alignment: Alignment.center, child: CupertinoActivityIndicator())
         : ElevatedButton(
             onPressed: onPressed,
             style: buttonStyle,

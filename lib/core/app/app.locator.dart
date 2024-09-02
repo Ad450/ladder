@@ -1,13 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
 import 'package:ladder/api/datasources/auth.datasource.dart';
 import 'package:ladder/api/datasources/expenses.datasource.dart';
 import 'package:ladder/api/datasources/metrics.datasource.dart';
 import 'package:ladder/api/datasources/revenue.datasource.dart';
-import 'package:ladder/api/models/expenses.dart';
-import 'package:ladder/api/models/revenue.dart';
-import 'package:ladder/api/models/transactions.dart';
+import 'package:ladder/api/network/network.service.dart';
 import 'package:ladder/api/store/ladder.store.dart';
 import 'package:ladder/api/usecases/add.expenses.dart';
 import 'package:ladder/api/usecases/add.revenue.dart';
@@ -20,23 +17,23 @@ import 'package:ladder/api/usecases/fetch.user.profile.dart';
 import 'package:ladder/api/usecases/signin.dart';
 import 'package:ladder/api/usecases/signout.dart';
 import 'package:ladder/api/usecases/signup.dart';
-import 'package:ladder/api/usecases/update.user.dart';
 
 final locator = GetIt.instance;
 
 void setupLocator() {
-  // register hive adapters
-  Hive.registerAdapter<RevenueModel>(RevenueModelAdapter());
-  Hive.registerAdapter<ExpenseModel>(ExpenseModelAdapter());
-  Hive.registerAdapter<TransactionModel>(TransactionModelAdapter());
+  locator.registerLazySingleton<HiveStore>(() => HiveStore());
+  // network
+  locator.registerLazySingleton<NetworkService>(() => NetworkServiceImpl(
+        Dio(BaseOptions(baseUrl: "https://personal-expense-tracker.myladder.africa")),
+        locator.get<HiveStore>(),
+      ));
 
 // datasources
-  locator.registerLazySingleton<HiveStore>(() => HiveStore());
   locator.registerLazySingleton<ExpensesDatasource>(
-    () => ExpensesDatasourceImpl(locator.get<HiveStore>()),
+    () => ExpensesDatasourceImpl(locator.get<NetworkService>()),
   );
   locator.registerLazySingleton<RevenueDatasource>(
-    () => RevenueDatasourceImpl(locator.get<HiveStore>()),
+    () => RevenueDatasourceImpl(locator.get<NetworkService>()),
   );
 
   locator.registerLazySingleton<MetricsDatasource>(
@@ -48,10 +45,7 @@ void setupLocator() {
   );
 
   locator.registerLazySingleton<AuthDatasource>(
-    () => AuthDatasourceImpl(
-      locator.get<HiveStore>(),
-      FirebaseAuth.instance,
-    ),
+    () => AuthDatasourceImpl(locator.get<NetworkService>(), locator.get<HiveStore>()),
   );
 
 // usecases
@@ -88,9 +82,9 @@ void setupLocator() {
     () => Signout(locator.get<AuthDatasource>()),
   );
 
-  locator.registerLazySingleton<UpdateUser>(
-    () => UpdateUser(locator.get<AuthDatasource>()),
-  );
+  // locator.registerLazySingleton<UpdateUser>(
+  //   () => UpdateUser(locator.get<AuthDatasource>()),
+  // );
 
   locator.registerLazySingleton<CheckAuthStaus>(
     () => CheckAuthStaus(locator.get<HiveStore>()),

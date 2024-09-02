@@ -30,7 +30,7 @@ mixin _$AuthState {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) =>
       throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ mixin _$AuthState {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) =>
       throw _privateConstructorUsedError;
@@ -66,7 +66,7 @@ mixin _$AuthState {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) =>
@@ -203,7 +203,7 @@ class _$AuthStateInitialImpl implements _AuthStateInitial {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return initial();
@@ -224,7 +224,7 @@ class _$AuthStateInitialImpl implements _AuthStateInitial {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return initial?.call();
@@ -245,7 +245,7 @@ class _$AuthStateInitialImpl implements _AuthStateInitial {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -388,7 +388,7 @@ class _$AuthStateSignupLoadingImpl implements _AuthStateSignupLoading {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signupLoading();
@@ -409,7 +409,7 @@ class _$AuthStateSignupLoadingImpl implements _AuthStateSignupLoading {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signupLoading?.call();
@@ -430,7 +430,7 @@ class _$AuthStateSignupLoadingImpl implements _AuthStateSignupLoading {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -573,7 +573,7 @@ class _$AuthStateSigninLoadingImpl implements _AuthStateSigninLoading {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signinLoading();
@@ -594,7 +594,7 @@ class _$AuthStateSigninLoadingImpl implements _AuthStateSigninLoading {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signinLoading?.call();
@@ -615,7 +615,7 @@ class _$AuthStateSigninLoadingImpl implements _AuthStateSigninLoading {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -758,7 +758,7 @@ class _$AuthStateSignupSuccessImpl implements _AuthStateSignupSuccess {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signupSuccess();
@@ -779,7 +779,7 @@ class _$AuthStateSignupSuccessImpl implements _AuthStateSignupSuccess {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signupSuccess?.call();
@@ -800,7 +800,7 @@ class _$AuthStateSignupSuccessImpl implements _AuthStateSignupSuccess {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -943,7 +943,7 @@ class _$AuthStateSigninSuccessImpl implements _AuthStateSigninSuccess {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signinSuccess();
@@ -964,7 +964,7 @@ class _$AuthStateSigninSuccessImpl implements _AuthStateSigninSuccess {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signinSuccess?.call();
@@ -985,7 +985,7 @@ class _$AuthStateSigninSuccessImpl implements _AuthStateSigninSuccess {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -1128,7 +1128,7 @@ class _$AuthStateSignoutLoadingImpl implements _AuthStateSignoutLoading {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signoutLoading();
@@ -1149,7 +1149,7 @@ class _$AuthStateSignoutLoadingImpl implements _AuthStateSignoutLoading {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signoutLoading?.call();
@@ -1170,7 +1170,7 @@ class _$AuthStateSignoutLoadingImpl implements _AuthStateSignoutLoading {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -1313,7 +1313,7 @@ class _$AuthStateSignoutSuccessImpl implements _AuthStateSignoutSuccess {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return signoutSuccess();
@@ -1334,7 +1334,7 @@ class _$AuthStateSignoutSuccessImpl implements _AuthStateSignoutSuccess {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return signoutSuccess?.call();
@@ -1355,7 +1355,7 @@ class _$AuthStateSignoutSuccessImpl implements _AuthStateSignoutSuccess {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -1498,7 +1498,7 @@ class _$AuthStateUpdateUserSuccessImpl implements _AuthStateUpdateUserSuccess {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return updateUserSuccess();
@@ -1519,7 +1519,7 @@ class _$AuthStateUpdateUserSuccessImpl implements _AuthStateUpdateUserSuccess {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return updateUserSuccess?.call();
@@ -1540,7 +1540,7 @@ class _$AuthStateUpdateUserSuccessImpl implements _AuthStateUpdateUserSuccess {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -1684,7 +1684,7 @@ class _$AuthStateUpdateUserLoadingImpl implements _AuthStateUpdateUserLoading {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return updateUserLoading();
@@ -1705,7 +1705,7 @@ class _$AuthStateUpdateUserLoadingImpl implements _AuthStateUpdateUserLoading {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return updateUserLoading?.call();
@@ -1726,7 +1726,7 @@ class _$AuthStateUpdateUserLoadingImpl implements _AuthStateUpdateUserLoading {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -1894,7 +1894,7 @@ class _$AuthStateErrorImpl implements _AuthStateError {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return error(message);
@@ -1915,7 +1915,7 @@ class _$AuthStateErrorImpl implements _AuthStateError {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return error?.call(message);
@@ -1936,7 +1936,7 @@ class _$AuthStateErrorImpl implements _AuthStateError {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -2082,7 +2082,7 @@ class _$AuthStateUserExistsImpl implements _AuthStateUserExists {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return userExists();
@@ -2103,7 +2103,7 @@ class _$AuthStateUserExistsImpl implements _AuthStateUserExists {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return userExists?.call();
@@ -2124,7 +2124,7 @@ class _$AuthStateUserExistsImpl implements _AuthStateUserExists {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -2264,7 +2264,7 @@ class _$AuthStateNewUserImpl implements _AuthStateNewUser {
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return newUser();
@@ -2285,7 +2285,7 @@ class _$AuthStateNewUserImpl implements _AuthStateNewUser {
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return newUser?.call();
@@ -2306,7 +2306,7 @@ class _$AuthStateNewUserImpl implements _AuthStateNewUser {
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -2403,7 +2403,9 @@ abstract class _$$AuthStateFetchUserProfileSuccessImplCopyWith<$Res> {
           $Res Function(_$AuthStateFetchUserProfileSuccessImpl) then) =
       __$$AuthStateFetchUserProfileSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProfileModel profile});
+  $Res call({UserModel profile});
+
+  $UserModelCopyWith<$Res> get profile;
 }
 
 /// @nodoc
@@ -2425,8 +2427,16 @@ class __$$AuthStateFetchUserProfileSuccessImplCopyWithImpl<$Res>
       null == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
-              as ProfileModel,
+              as UserModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get profile {
+    return $UserModelCopyWith<$Res>(_value.profile, (value) {
+      return _then(_value.copyWith(profile: value));
+    });
   }
 }
 
@@ -2437,7 +2447,7 @@ class _$AuthStateFetchUserProfileSuccessImpl
   const _$AuthStateFetchUserProfileSuccessImpl(this.profile);
 
   @override
-  final ProfileModel profile;
+  final UserModel profile;
 
   @override
   String toString() {
@@ -2478,7 +2488,7 @@ class _$AuthStateFetchUserProfileSuccessImpl
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return fetchUserProfileSuccess(profile);
@@ -2499,7 +2509,7 @@ class _$AuthStateFetchUserProfileSuccessImpl
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return fetchUserProfileSuccess?.call(profile);
@@ -2520,7 +2530,7 @@ class _$AuthStateFetchUserProfileSuccessImpl
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {
@@ -2607,10 +2617,10 @@ class _$AuthStateFetchUserProfileSuccessImpl
 }
 
 abstract class _AuthStateFetchUserProfileSuccess implements AuthState {
-  const factory _AuthStateFetchUserProfileSuccess(final ProfileModel profile) =
+  const factory _AuthStateFetchUserProfileSuccess(final UserModel profile) =
       _$AuthStateFetchUserProfileSuccessImpl;
 
-  ProfileModel get profile;
+  UserModel get profile;
   @JsonKey(ignore: true)
   _$$AuthStateFetchUserProfileSuccessImplCopyWith<
           _$AuthStateFetchUserProfileSuccessImpl>
@@ -2672,7 +2682,7 @@ class _$AuthStateFetchUserProfileLoadingImpl
     required TResult Function(String message) error,
     required TResult Function() userExists,
     required TResult Function() newUser,
-    required TResult Function(ProfileModel profile) fetchUserProfileSuccess,
+    required TResult Function(UserModel profile) fetchUserProfileSuccess,
     required TResult Function() fetchUserProfileLoading,
   }) {
     return fetchUserProfileLoading();
@@ -2693,7 +2703,7 @@ class _$AuthStateFetchUserProfileLoadingImpl
     TResult? Function(String message)? error,
     TResult? Function()? userExists,
     TResult? Function()? newUser,
-    TResult? Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult? Function(UserModel profile)? fetchUserProfileSuccess,
     TResult? Function()? fetchUserProfileLoading,
   }) {
     return fetchUserProfileLoading?.call();
@@ -2714,7 +2724,7 @@ class _$AuthStateFetchUserProfileLoadingImpl
     TResult Function(String message)? error,
     TResult Function()? userExists,
     TResult Function()? newUser,
-    TResult Function(ProfileModel profile)? fetchUserProfileSuccess,
+    TResult Function(UserModel profile)? fetchUserProfileSuccess,
     TResult Function()? fetchUserProfileLoading,
     required TResult orElse(),
   }) {

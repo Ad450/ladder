@@ -54,7 +54,7 @@ class _SignupViewState extends State<SignupView> {
               _clearTextfield(context);
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (_) => const HomeView()),
+                MaterialPageRoute(builder: (_) => const Login()),
                 (predicate) => true,
               );
               return;
