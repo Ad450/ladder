@@ -1,16 +1,32 @@
-# ladder
+# Ladder
 
-A new Flutter project.
+To run
 
-## Getting Started
+Environment requirement
 
-This project is a starting point for a Flutter application.
+Flutter version : 3.19.5
 
-A few resources to get you started if this is your first Flutter project:
+android minSdkVersion 23
+ios version 13
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Build Instructions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To build apk for android: flutter run apk --release
+
+To build an ipa
+
+- enable automatic signing capabilities in xcode
+- should have an apple developer account or team
+- should select a deployment target
+
+commmand : flutter run ipa
+
+Side notes on important project dependencies
+
+State management - flutter bloc
+Local storage - hive flutter
+Code generation tools - json serializable, freezed
+
+Note:
+Even though project dependencies captures firebase core and auth, it's not being used
+and would not affect project subsequent builds
