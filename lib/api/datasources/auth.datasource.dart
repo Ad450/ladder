@@ -1,3 +1,4 @@
+import 'package:ladder/api/models/profile.model.dart';
 import 'package:ladder/api/models/user.model.dart';
 import 'package:ladder/api/network/network.service.dart';
 import 'package:ladder/api/store/ladder.store.dart';
@@ -7,9 +8,9 @@ abstract class AuthDatasource {
   Future<void> signup({required String name, required String email, required String password});
   Future<void> signin({required String email, required String password});
   Future<void> signout();
-  // Future<void> updateUser({required String name, String? profileFilePath});
+  Future<void> updateUser({required String name, String? profileFilePath});
 
-  Future<UserModel> fetchProfile();
+  Future<ProfileModel> fetchProfile();
 }
 
 class AuthDatasourceImpl implements AuthDatasource {
@@ -25,7 +26,7 @@ class AuthDatasourceImpl implements AuthDatasource {
       final res = await networkService.post("/auth/signup", data: user.toJson());
       if (res.data != null) {
         if (res.code == null) {
-          print("....... message from res ${res.data}");
+          await hiveStore.saveItem(name, "name", key: "name");
           return;
         } else {
           throw ApiFailure(res.code!.toString());
@@ -51,7 +52,6 @@ class AuthDatasourceImpl implements AuthDatasource {
         await hiveStore.saveItem(email, "email", key: "email");
         await hiveStore.saveItem(password, "password", key: "password");
 
-        print("........ signin worked ${res.data}");
         return;
       }
       throw ApiFailure(res.code!.toString());
@@ -63,37 +63,52 @@ class AuthDatasourceImpl implements AuthDatasource {
   @override
   Future<void> signout() async {
     try {
-      await hiveStore.deleteItem("uid", "uid");
+      await hiveStore.deleteItem("accessToken", "accessToken");
     } catch (e) {
       throw ApiFailure("sign out failed");
     }
   }
 
+  // simulating update since no update user endpoint available
+  // this will be consumed in settings
+
+  @override
+  Future<void> updateUser({
+    required String name,
+    String? profileFilePath,
+  }) async {
+    try {
+      await hiveStore.saveItem(profileFilePath, "profilePath", key: "profilePath");
+      await hiveStore.saveItem(name, "name", key: "name");
+    } catch (e) {
+      throw ApiFailure(e.toString());
+    }
+  }
+
+  /// function does not work because endpoints provides to user id
   // @override
-  // Future<void> updateUser({
-  //   required String name,
-  //   String? profileFilePath,
-  // }) async {
+  // Future<UserModel> fetchProfile() async {
   //   try {
-  //     final currentUser = instance.currentUser;
-  //     await currentUser?.updateDisplayName(name);
-  //     await currentUser?.updatePhotoURL(profileFilePath);
-  //     // await currentUser.updatePassword(newPassword)
+  //     final id = await hiveStore.readItem("uid", "uid");
+  //     final res = await networkService.getHttp("/auth/user/$id/profile");
+  //     if (res.data != null) {
+  //       await hiveStore.saveItem(res.data!["id"], "uid", key: "uid");
+  //       return UserModel.fromJson(res.data!);
+  //     }
+  //     throw ApiFailure(res.code!.toString());
   //   } catch (e) {
   //     throw ApiFailure(e.toString());
   //   }
   // }
 
+// simulating profile fetch
   @override
-  Future<UserModel> fetchProfile() async {
+  Future<ProfileModel> fetchProfile() async {
     try {
-      final id = await hiveStore.readItem("uid", "uid");
-      final res = await networkService.getHttp("/auth/user/$id/profile");
-      if (res.data != null) {
-        await hiveStore.saveItem(res.data!["id"], "uid", key: "uid");
-        return UserModel.fromJson(res.data!);
-      }
-      throw ApiFailure(res.code!.toString());
+      final profilePath = await hiveStore.readItem("profilePath", "profilePath");
+      final name = await hiveStore.readItem("name", "name");
+
+      return ProfileModel(name: name, profilePath: profilePath);
     } catch (e) {
       throw ApiFailure(e.toString());
     }

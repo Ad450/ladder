@@ -22,5 +22,8 @@ class DashboardState with _$DashboardState {
   const factory DashboardState.fetchTransactionLoading() = _DashboardStateFetchTransactionLoading;
   const factory DashboardState.fetchTransactionSuccess(List<dynamic> metrics) = _DashboardStateFetchTransactionSuccess;
 
+  const factory DashboardState.deleteRevenueLoading() = _DashboardStateDeleteRevenueLoading;
+  const factory DashboardState.deleteRevenueSuccess() = _DashboardStateDeleteRevenueSuccess;
+
   const factory DashboardState.error(String message) = _DashboardStateError;
 }

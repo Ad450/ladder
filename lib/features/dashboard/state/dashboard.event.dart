@@ -11,3 +11,8 @@ class FetchRevenuesEvent extends DashboardEvent {}
 // class FetchExpensesEvent extends DashboardEvent {}
 
 class FetchTransactionsEvent extends DashboardEvent {}
+
+class DeleteRevenueEvent extends DashboardEvent {
+  String id;
+  DeleteRevenueEvent(this.id);
+}

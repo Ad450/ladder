@@ -29,6 +29,8 @@ mixin _$DashboardState {
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +47,8 @@ mixin _$DashboardState {
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +65,8 @@ mixin _$DashboardState {
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -88,6 +94,10 @@ mixin _$DashboardState {
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +123,10 @@ mixin _$DashboardState {
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -136,6 +150,10 @@ mixin _$DashboardState {
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -211,6 +229,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -230,6 +250,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -249,6 +271,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -282,6 +306,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return initial(this);
@@ -310,6 +338,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return initial?.call(this);
@@ -336,6 +368,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -404,6 +440,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return addRevenueSuccess();
@@ -423,6 +461,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return addRevenueSuccess?.call();
@@ -442,6 +482,8 @@ class _$DashboardStateAddRevenueSuccessImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -475,6 +517,10 @@ class _$DashboardStateAddRevenueSuccessImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return addRevenueSuccess(this);
@@ -503,6 +549,10 @@ class _$DashboardStateAddRevenueSuccessImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return addRevenueSuccess?.call(this);
@@ -529,6 +579,10 @@ class _$DashboardStateAddRevenueSuccessImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -596,6 +650,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return addExpensesSuccess();
@@ -615,6 +671,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return addExpensesSuccess?.call();
@@ -634,6 +692,8 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -667,6 +727,10 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return addExpensesSuccess(this);
@@ -695,6 +759,10 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return addExpensesSuccess?.call(this);
@@ -721,6 +789,10 @@ class _$DashboardStateAddExpensesImpl implements _DashboardStateAddExpenses {
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -789,6 +861,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return addRevenueLoading();
@@ -808,6 +882,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return addRevenueLoading?.call();
@@ -827,6 +903,8 @@ class _$DashboardStateAddRevenueLoadingImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -860,6 +938,10 @@ class _$DashboardStateAddRevenueLoadingImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return addRevenueLoading(this);
@@ -888,6 +970,10 @@ class _$DashboardStateAddRevenueLoadingImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return addRevenueLoading?.call(this);
@@ -914,6 +1000,10 @@ class _$DashboardStateAddRevenueLoadingImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -983,6 +1073,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return addExpensesLoading();
@@ -1002,6 +1094,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return addExpensesLoading?.call();
@@ -1021,6 +1115,8 @@ class _$DashboardStateAddExpensesLoadingImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1054,6 +1150,10 @@ class _$DashboardStateAddExpensesLoadingImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return addExpensesLoading(this);
@@ -1082,6 +1182,10 @@ class _$DashboardStateAddExpensesLoadingImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return addExpensesLoading?.call(this);
@@ -1108,6 +1212,10 @@ class _$DashboardStateAddExpensesLoadingImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1177,6 +1285,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchExpensesLoading();
@@ -1196,6 +1306,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchExpensesLoading?.call();
@@ -1215,6 +1327,8 @@ class _$DashboardStateFetchExpensesLoadingImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1248,6 +1362,10 @@ class _$DashboardStateFetchExpensesLoadingImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchExpensesLoading(this);
@@ -1276,6 +1394,10 @@ class _$DashboardStateFetchExpensesLoadingImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchExpensesLoading?.call(this);
@@ -1302,6 +1424,10 @@ class _$DashboardStateFetchExpensesLoadingImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1371,6 +1497,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchRevenueLoading();
@@ -1390,6 +1518,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchRevenueLoading?.call();
@@ -1409,6 +1539,8 @@ class _$DashboardStateFetchRevenueLoadingImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1442,6 +1574,10 @@ class _$DashboardStateFetchRevenueLoadingImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchRevenueLoading(this);
@@ -1470,6 +1606,10 @@ class _$DashboardStateFetchRevenueLoadingImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchRevenueLoading?.call(this);
@@ -1496,6 +1636,10 @@ class _$DashboardStateFetchRevenueLoadingImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1600,6 +1744,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchExpensesSuccess(expenses);
@@ -1619,6 +1765,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchExpensesSuccess?.call(expenses);
@@ -1638,6 +1786,8 @@ class _$DashboardStateFetchExpensesSuccessImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1671,6 +1821,10 @@ class _$DashboardStateFetchExpensesSuccessImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchExpensesSuccess(this);
@@ -1699,6 +1853,10 @@ class _$DashboardStateFetchExpensesSuccessImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchExpensesSuccess?.call(this);
@@ -1725,6 +1883,10 @@ class _$DashboardStateFetchExpensesSuccessImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1836,6 +1998,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchRevenueSuccess(revenues);
@@ -1855,6 +2019,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchRevenueSuccess?.call(revenues);
@@ -1874,6 +2040,8 @@ class _$DashboardStateFetchRevenueSuccessImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1907,6 +2075,10 @@ class _$DashboardStateFetchRevenueSuccessImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchRevenueSuccess(this);
@@ -1935,6 +2107,10 @@ class _$DashboardStateFetchRevenueSuccessImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchRevenueSuccess?.call(this);
@@ -1961,6 +2137,10 @@ class _$DashboardStateFetchRevenueSuccessImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -2037,6 +2217,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchTransactionLoading();
@@ -2056,6 +2238,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchTransactionLoading?.call();
@@ -2075,6 +2259,8 @@ class _$DashboardStateFetchTransactionLoadingImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -2108,6 +2294,10 @@ class _$DashboardStateFetchTransactionLoadingImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchTransactionLoading(this);
@@ -2136,6 +2326,10 @@ class _$DashboardStateFetchTransactionLoadingImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchTransactionLoading?.call(this);
@@ -2162,6 +2356,10 @@ class _$DashboardStateFetchTransactionLoadingImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -2266,6 +2464,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return fetchTransactionSuccess(metrics);
@@ -2285,6 +2485,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return fetchTransactionSuccess?.call(metrics);
@@ -2304,6 +2506,8 @@ class _$DashboardStateFetchTransactionSuccessImpl
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -2337,6 +2541,10 @@ class _$DashboardStateFetchTransactionSuccessImpl
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return fetchTransactionSuccess(this);
@@ -2365,6 +2573,10 @@ class _$DashboardStateFetchTransactionSuccessImpl
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return fetchTransactionSuccess?.call(this);
@@ -2391,6 +2603,10 @@ class _$DashboardStateFetchTransactionSuccessImpl
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {
@@ -2412,6 +2628,430 @@ abstract class _DashboardStateFetchTransactionSuccess
   _$$DashboardStateFetchTransactionSuccessImplCopyWith<
           _$DashboardStateFetchTransactionSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DashboardStateDeleteRevenueLoadingImplCopyWith<$Res> {
+  factory _$$DashboardStateDeleteRevenueLoadingImplCopyWith(
+          _$DashboardStateDeleteRevenueLoadingImpl value,
+          $Res Function(_$DashboardStateDeleteRevenueLoadingImpl) then) =
+      __$$DashboardStateDeleteRevenueLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DashboardStateDeleteRevenueLoadingImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res,
+        _$DashboardStateDeleteRevenueLoadingImpl>
+    implements _$$DashboardStateDeleteRevenueLoadingImplCopyWith<$Res> {
+  __$$DashboardStateDeleteRevenueLoadingImplCopyWithImpl(
+      _$DashboardStateDeleteRevenueLoadingImpl _value,
+      $Res Function(_$DashboardStateDeleteRevenueLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DashboardStateDeleteRevenueLoadingImpl
+    implements _DashboardStateDeleteRevenueLoading {
+  const _$DashboardStateDeleteRevenueLoadingImpl();
+
+  @override
+  String toString() {
+    return 'DashboardState.deleteRevenueLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DashboardStateDeleteRevenueLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRevenueSuccess,
+    required TResult Function() addExpensesSuccess,
+    required TResult Function() addRevenueLoading,
+    required TResult Function() addExpensesLoading,
+    required TResult Function() fetchExpensesLoading,
+    required TResult Function() fetchRevenueLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
+    required TResult Function() fetchTransactionLoading,
+    required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
+    required TResult Function(String message) error,
+  }) {
+    return deleteRevenueLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRevenueSuccess,
+    TResult? Function()? addExpensesSuccess,
+    TResult? Function()? addRevenueLoading,
+    TResult? Function()? addExpensesLoading,
+    TResult? Function()? fetchExpensesLoading,
+    TResult? Function()? fetchRevenueLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
+    TResult? Function()? fetchTransactionLoading,
+    TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
+    TResult? Function(String message)? error,
+  }) {
+    return deleteRevenueLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRevenueSuccess,
+    TResult Function()? addExpensesSuccess,
+    TResult Function()? addRevenueLoading,
+    TResult Function()? addExpensesLoading,
+    TResult Function()? fetchExpensesLoading,
+    TResult Function()? fetchRevenueLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
+    TResult Function()? fetchTransactionLoading,
+    TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (deleteRevenueLoading != null) {
+      return deleteRevenueLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DashboardStateInitial value) initial,
+    required TResult Function(_DashboardStateAddRevenueSuccess value)
+        addRevenueSuccess,
+    required TResult Function(_DashboardStateAddExpenses value)
+        addExpensesSuccess,
+    required TResult Function(_DashboardStateAddRevenueLoading value)
+        addRevenueLoading,
+    required TResult Function(_DashboardStateAddExpensesLoading value)
+        addExpensesLoading,
+    required TResult Function(_DashboardStateFetchExpensesLoading value)
+        fetchExpensesLoading,
+    required TResult Function(_DashboardStateFetchRevenueLoading value)
+        fetchRevenueLoading,
+    required TResult Function(_DashboardStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_DashboardStateFetchRevenueSuccess value)
+        fetchRevenueSuccess,
+    required TResult Function(_DashboardStateFetchTransactionLoading value)
+        fetchTransactionLoading,
+    required TResult Function(_DashboardStateFetchTransactionSuccess value)
+        fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
+    required TResult Function(_DashboardStateError value) error,
+  }) {
+    return deleteRevenueLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DashboardStateInitial value)? initial,
+    TResult? Function(_DashboardStateAddRevenueSuccess value)?
+        addRevenueSuccess,
+    TResult? Function(_DashboardStateAddExpenses value)? addExpensesSuccess,
+    TResult? Function(_DashboardStateAddRevenueLoading value)?
+        addRevenueLoading,
+    TResult? Function(_DashboardStateAddExpensesLoading value)?
+        addExpensesLoading,
+    TResult? Function(_DashboardStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
+    TResult? Function(_DashboardStateFetchRevenueLoading value)?
+        fetchRevenueLoading,
+    TResult? Function(_DashboardStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_DashboardStateFetchRevenueSuccess value)?
+        fetchRevenueSuccess,
+    TResult? Function(_DashboardStateFetchTransactionLoading value)?
+        fetchTransactionLoading,
+    TResult? Function(_DashboardStateFetchTransactionSuccess value)?
+        fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
+    TResult? Function(_DashboardStateError value)? error,
+  }) {
+    return deleteRevenueLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DashboardStateInitial value)? initial,
+    TResult Function(_DashboardStateAddRevenueSuccess value)? addRevenueSuccess,
+    TResult Function(_DashboardStateAddExpenses value)? addExpensesSuccess,
+    TResult Function(_DashboardStateAddRevenueLoading value)? addRevenueLoading,
+    TResult Function(_DashboardStateAddExpensesLoading value)?
+        addExpensesLoading,
+    TResult Function(_DashboardStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
+    TResult Function(_DashboardStateFetchRevenueLoading value)?
+        fetchRevenueLoading,
+    TResult Function(_DashboardStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_DashboardStateFetchRevenueSuccess value)?
+        fetchRevenueSuccess,
+    TResult Function(_DashboardStateFetchTransactionLoading value)?
+        fetchTransactionLoading,
+    TResult Function(_DashboardStateFetchTransactionSuccess value)?
+        fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
+    TResult Function(_DashboardStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (deleteRevenueLoading != null) {
+      return deleteRevenueLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DashboardStateDeleteRevenueLoading implements DashboardState {
+  const factory _DashboardStateDeleteRevenueLoading() =
+      _$DashboardStateDeleteRevenueLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$DashboardStateDeleteRevenueSuccessImplCopyWith<$Res> {
+  factory _$$DashboardStateDeleteRevenueSuccessImplCopyWith(
+          _$DashboardStateDeleteRevenueSuccessImpl value,
+          $Res Function(_$DashboardStateDeleteRevenueSuccessImpl) then) =
+      __$$DashboardStateDeleteRevenueSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DashboardStateDeleteRevenueSuccessImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res,
+        _$DashboardStateDeleteRevenueSuccessImpl>
+    implements _$$DashboardStateDeleteRevenueSuccessImplCopyWith<$Res> {
+  __$$DashboardStateDeleteRevenueSuccessImplCopyWithImpl(
+      _$DashboardStateDeleteRevenueSuccessImpl _value,
+      $Res Function(_$DashboardStateDeleteRevenueSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DashboardStateDeleteRevenueSuccessImpl
+    implements _DashboardStateDeleteRevenueSuccess {
+  const _$DashboardStateDeleteRevenueSuccessImpl();
+
+  @override
+  String toString() {
+    return 'DashboardState.deleteRevenueSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DashboardStateDeleteRevenueSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addRevenueSuccess,
+    required TResult Function() addExpensesSuccess,
+    required TResult Function() addRevenueLoading,
+    required TResult Function() addExpensesLoading,
+    required TResult Function() fetchExpensesLoading,
+    required TResult Function() fetchRevenueLoading,
+    required TResult Function(List<ExpenseModel> expenses) fetchExpensesSuccess,
+    required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
+    required TResult Function() fetchTransactionLoading,
+    required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
+    required TResult Function(String message) error,
+  }) {
+    return deleteRevenueSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addRevenueSuccess,
+    TResult? Function()? addExpensesSuccess,
+    TResult? Function()? addRevenueLoading,
+    TResult? Function()? addExpensesLoading,
+    TResult? Function()? fetchExpensesLoading,
+    TResult? Function()? fetchRevenueLoading,
+    TResult? Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
+    TResult? Function()? fetchTransactionLoading,
+    TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
+    TResult? Function(String message)? error,
+  }) {
+    return deleteRevenueSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addRevenueSuccess,
+    TResult Function()? addExpensesSuccess,
+    TResult Function()? addRevenueLoading,
+    TResult Function()? addExpensesLoading,
+    TResult Function()? fetchExpensesLoading,
+    TResult Function()? fetchRevenueLoading,
+    TResult Function(List<ExpenseModel> expenses)? fetchExpensesSuccess,
+    TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
+    TResult Function()? fetchTransactionLoading,
+    TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (deleteRevenueSuccess != null) {
+      return deleteRevenueSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DashboardStateInitial value) initial,
+    required TResult Function(_DashboardStateAddRevenueSuccess value)
+        addRevenueSuccess,
+    required TResult Function(_DashboardStateAddExpenses value)
+        addExpensesSuccess,
+    required TResult Function(_DashboardStateAddRevenueLoading value)
+        addRevenueLoading,
+    required TResult Function(_DashboardStateAddExpensesLoading value)
+        addExpensesLoading,
+    required TResult Function(_DashboardStateFetchExpensesLoading value)
+        fetchExpensesLoading,
+    required TResult Function(_DashboardStateFetchRevenueLoading value)
+        fetchRevenueLoading,
+    required TResult Function(_DashboardStateFetchExpensesSuccess value)
+        fetchExpensesSuccess,
+    required TResult Function(_DashboardStateFetchRevenueSuccess value)
+        fetchRevenueSuccess,
+    required TResult Function(_DashboardStateFetchTransactionLoading value)
+        fetchTransactionLoading,
+    required TResult Function(_DashboardStateFetchTransactionSuccess value)
+        fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
+    required TResult Function(_DashboardStateError value) error,
+  }) {
+    return deleteRevenueSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DashboardStateInitial value)? initial,
+    TResult? Function(_DashboardStateAddRevenueSuccess value)?
+        addRevenueSuccess,
+    TResult? Function(_DashboardStateAddExpenses value)? addExpensesSuccess,
+    TResult? Function(_DashboardStateAddRevenueLoading value)?
+        addRevenueLoading,
+    TResult? Function(_DashboardStateAddExpensesLoading value)?
+        addExpensesLoading,
+    TResult? Function(_DashboardStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
+    TResult? Function(_DashboardStateFetchRevenueLoading value)?
+        fetchRevenueLoading,
+    TResult? Function(_DashboardStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult? Function(_DashboardStateFetchRevenueSuccess value)?
+        fetchRevenueSuccess,
+    TResult? Function(_DashboardStateFetchTransactionLoading value)?
+        fetchTransactionLoading,
+    TResult? Function(_DashboardStateFetchTransactionSuccess value)?
+        fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
+    TResult? Function(_DashboardStateError value)? error,
+  }) {
+    return deleteRevenueSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DashboardStateInitial value)? initial,
+    TResult Function(_DashboardStateAddRevenueSuccess value)? addRevenueSuccess,
+    TResult Function(_DashboardStateAddExpenses value)? addExpensesSuccess,
+    TResult Function(_DashboardStateAddRevenueLoading value)? addRevenueLoading,
+    TResult Function(_DashboardStateAddExpensesLoading value)?
+        addExpensesLoading,
+    TResult Function(_DashboardStateFetchExpensesLoading value)?
+        fetchExpensesLoading,
+    TResult Function(_DashboardStateFetchRevenueLoading value)?
+        fetchRevenueLoading,
+    TResult Function(_DashboardStateFetchExpensesSuccess value)?
+        fetchExpensesSuccess,
+    TResult Function(_DashboardStateFetchRevenueSuccess value)?
+        fetchRevenueSuccess,
+    TResult Function(_DashboardStateFetchTransactionLoading value)?
+        fetchTransactionLoading,
+    TResult Function(_DashboardStateFetchTransactionSuccess value)?
+        fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
+    TResult Function(_DashboardStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (deleteRevenueSuccess != null) {
+      return deleteRevenueSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DashboardStateDeleteRevenueSuccess implements DashboardState {
+  const factory _DashboardStateDeleteRevenueSuccess() =
+      _$DashboardStateDeleteRevenueSuccessImpl;
 }
 
 /// @nodoc
@@ -2490,6 +3130,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     required TResult Function(List<RevenueModel> revenues) fetchRevenueSuccess,
     required TResult Function() fetchTransactionLoading,
     required TResult Function(List<dynamic> metrics) fetchTransactionSuccess,
+    required TResult Function() deleteRevenueLoading,
+    required TResult Function() deleteRevenueSuccess,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -2509,6 +3151,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult? Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult? Function()? fetchTransactionLoading,
     TResult? Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult? Function()? deleteRevenueLoading,
+    TResult? Function()? deleteRevenueSuccess,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -2528,6 +3172,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult Function(List<RevenueModel> revenues)? fetchRevenueSuccess,
     TResult Function()? fetchTransactionLoading,
     TResult Function(List<dynamic> metrics)? fetchTransactionSuccess,
+    TResult Function()? deleteRevenueLoading,
+    TResult Function()? deleteRevenueSuccess,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -2561,6 +3207,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
         fetchTransactionLoading,
     required TResult Function(_DashboardStateFetchTransactionSuccess value)
         fetchTransactionSuccess,
+    required TResult Function(_DashboardStateDeleteRevenueLoading value)
+        deleteRevenueLoading,
+    required TResult Function(_DashboardStateDeleteRevenueSuccess value)
+        deleteRevenueSuccess,
     required TResult Function(_DashboardStateError value) error,
   }) {
     return error(this);
@@ -2589,6 +3239,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
         fetchTransactionLoading,
     TResult? Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult? Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult? Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult? Function(_DashboardStateError value)? error,
   }) {
     return error?.call(this);
@@ -2615,6 +3269,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
         fetchTransactionLoading,
     TResult Function(_DashboardStateFetchTransactionSuccess value)?
         fetchTransactionSuccess,
+    TResult Function(_DashboardStateDeleteRevenueLoading value)?
+        deleteRevenueLoading,
+    TResult Function(_DashboardStateDeleteRevenueSuccess value)?
+        deleteRevenueSuccess,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
   }) {

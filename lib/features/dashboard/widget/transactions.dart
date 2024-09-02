@@ -26,7 +26,17 @@ class _TransactionsState extends State<Transactions> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DashboardBloc, DashboardState>(
+    return BlocConsumer<DashboardBloc, DashboardState>(
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        deleteRevenueSuccess: (_) {
+          Future.delayed(const Duration(milliseconds: 500)).then((value) {
+            context.read<DashboardBloc>().add(FetchRevenuesEvent());
+            showToast("Revenue deleted!");
+          });
+          return;
+        },
+      ),
       builder: (_, state) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -68,11 +78,19 @@ class _TransactionsState extends State<Transactions> {
               }
               return state.revenues
                   .map(
-                    (e) => TransactionWidget(
-                      title: e.nameOfRevenue,
-                      category: "Revenue",
-                      amount: e.amount.toString(),
-                      date: DateTime.now().toString().split(" ")[0],
+                    (e) => Dismissible(
+                      key: Key(e.id!),
+                      onDismissed: (direction) {
+                        // if (direction == DismissDirection.horizontal) {
+                        // }
+                        context.read<DashboardBloc>().add(DeleteRevenueEvent(e.id!));
+                      },
+                      child: TransactionWidget(
+                        title: e.nameOfRevenue,
+                        category: "Revenue",
+                        amount: e.amount.toString(),
+                        date: DateTime.now().toString().split(" ")[0],
+                      ),
                     ),
                   )
                   .toList();

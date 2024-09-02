@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ladder/api/usecases/add.expenses.dart';
 import 'package:ladder/api/usecases/add.revenue.dart';
 import 'package:ladder/api/usecases/check.auth.status.dart';
+import 'package:ladder/api/usecases/delete.expense.dart';
+import 'package:ladder/api/usecases/deletel.revenue.dart';
 import 'package:ladder/api/usecases/fetch.expenses.dart';
 import 'package:ladder/api/usecases/fetch.metrics.dart';
 import 'package:ladder/api/usecases/fetch.revenues.dart';
@@ -25,6 +27,7 @@ final dashboardBloc = BlocProvider(
     fetchExpenses: locator.get<FetchExpenses>(),
     fetchRevenues: locator.get<FetchRevenues>(),
     fetchTransactions: locator.get<FetchTransactions>(),
+    deleteRevenue: locator.get<DeleteRevenue>(),
   ),
 );
 
@@ -32,6 +35,7 @@ final expensesBloc = BlocProvider(
   create: (_) => ExpensesBloc(
     fetchExpenses: locator.get<FetchExpenses>(),
     fetchRevenues: locator.get<FetchRevenues>(),
+    deleteExpense: locator.get<DeleteExpense>(),
   ),
 );
 
@@ -46,7 +50,7 @@ final authBloc = BlocProvider(
     signin: locator.get<Signin>(),
     signup: locator.get<Signup>(),
     signout: locator.get<Signout>(),
-    // updateUser: locator.get<UpdateUser>(),
+    updateUser: locator.get<UpdateUser>(),
     checkAuthStaus: locator.get<CheckAuthStaus>(),
     fetchUserProfile: locator.get<FetchUserProfile>(),
   )..add(AppStartedEvent()),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:ladder/api/network/parse.networ.response.dart';
 import 'package:ladder/api/platform/app.strings.dart';
 import 'package:ladder/api/store/ladder.store.dart';
@@ -48,7 +49,6 @@ class NetworkServiceImpl implements NetworkService {
         return handler.next(options);
       },
       onError: (error, handler) async {
-        print("......errro here ${error.response?.statusCode}");
         if (error.response?.statusCode == 401) {
           RequestOptions options = error.response!.requestOptions;
 
@@ -57,7 +57,6 @@ class NetworkServiceImpl implements NetworkService {
 
             try {
               final token = await refreshToken();
-              print("........ token is $token");
               if (token != null) {
                 options.headers['Authorization'] = 'Bearer $token';
 
@@ -83,6 +82,8 @@ class NetworkServiceImpl implements NetworkService {
               error: 'Token refresh failed or retry limit reached.',
             ));
           }
+        } else {
+          debugPrint(error.response?.statusCode.toString());
         }
         return handler.next(error);
       },
@@ -92,8 +93,8 @@ class NetworkServiceImpl implements NetworkService {
   @override
   Future<ParsedNetworkResponse> delete(String endpoint, {Map<String, dynamic>? data, dynamic headers}) async {
     try {
-      final _response = await _dio.delete(endpoint, data: data, options: Options(headers: headers));
-      return _handleApiResponse(_response);
+      final response = await _dio.delete(endpoint, data: data, options: Options(headers: headers));
+      return _handleApiResponse(response);
     } on DioException catch (e) {
       return _handleApiResponse(e.response, error: e);
     } catch (e) {
@@ -104,8 +105,8 @@ class NetworkServiceImpl implements NetworkService {
   @override
   Future<ParsedNetworkResponse> getHttp(String endpoint, {Map<String, dynamic>? data, dynamic headers}) async {
     try {
-      final _response = await _dio.get(endpoint, queryParameters: data, options: Options(headers: headers));
-      return _handleApiResponse(_response);
+      final response = await _dio.get(endpoint, queryParameters: data, options: Options(headers: headers));
+      return _handleApiResponse(response);
     } on DioException catch (e) {
       return _handleApiResponse(e.response, error: e);
     } catch (e) {
@@ -116,8 +117,8 @@ class NetworkServiceImpl implements NetworkService {
   @override
   Future<ParsedNetworkResponse> post(String endpoint, {Map<String, dynamic>? data, dynamic headers}) async {
     try {
-      final _response = await _dio.post(endpoint, data: data, options: Options(headers: headers));
-      return _handleApiResponse(_response);
+      final response = await _dio.post(endpoint, data: data, options: Options(headers: headers));
+      return _handleApiResponse(response);
     } on DioException catch (e) {
       return _handleApiResponse(e.response, error: e);
     } catch (e) {
@@ -194,21 +195,16 @@ class NetworkServiceImpl implements NetworkService {
 
   Future<String?> refreshToken() async {
     try {
-      print("....... entered refresh token");
-
+      // fetch from hive to make a login request
       final email = await _hiveStore.readItem("email", "email");
       final password = await _hiveStore.readItem("password", "password");
-
-      print("..... email $email");
-      print("..... password $password");
 
       if (email != null && password != null) {
         final data = {"email": email, "password": password};
         final res = await post("/auth/login", data: data);
 
         if (res.data != null) {
-          print(",,,,,,, request came here ${res.data}");
-
+          // update token
           final token = res.data!["accessToken"];
           await _hiveStore.saveItem(token, "accessToken", key: "accessToken");
           return token;
@@ -219,8 +215,6 @@ class NetworkServiceImpl implements NetworkService {
         throw ApiFailure('Email or password is null');
       }
     } catch (e) {
-      print("...... actual eorr $e");
-      print('Error refreshing token: $e');
       return null; // Return null to indicate failure
     }
   }

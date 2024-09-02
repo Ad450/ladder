@@ -6,6 +6,8 @@ import 'package:ladder/api/utils/api.errors.dart';
 abstract class ExpensesDatasource {
   Future<List<ExpenseModel>> fetchExpenses();
   Future<void> addExpenses(ExpenseModel model);
+  Future<void> deleteExpense(String id);
+  Future<ExpenseModel> getExpensesById(String id);
 }
 
 class ExpensesDatasourceImpl implements ExpensesDatasource {
@@ -36,7 +38,6 @@ class ExpensesDatasourceImpl implements ExpensesDatasource {
     try {
       final res = await networkService.getHttp("/user/expenditure");
       if (res.data != null) {
-        print("tried fetching expense here, ${res.data!["data"].first}");
         return (res.data!["data"] as List)
             // unnecessary filtering but doing that because I inserted an expense
             // with null estimated value, api didnt reject it
@@ -47,9 +48,41 @@ class ExpensesDatasourceImpl implements ExpensesDatasource {
                 nameOfItem: e["nameOfItem"],
                 category: e["category"],
                 estimatedAmount: int.tryParse(e["estimatedAmount"].toString())!,
+                id: e["id"].toString(),
               ),
             )
             .toList();
+      }
+      throw ApiFailure(res.code!.toString());
+    } catch (e) {
+      throw ApiFailure(e.toString());
+    }
+  }
+
+  @override
+  Future<void> deleteExpense(String id) async {
+    try {
+      final res = await networkService.delete("/user/expenditure/$id");
+      if (res.data != null) {
+        return;
+      }
+      throw ApiFailure(res.code!.toString());
+    } catch (e) {
+      throw ApiFailure(e.toString());
+    }
+  }
+
+  @override
+  Future<ExpenseModel> getExpensesById(String id) async {
+    try {
+      final res = await networkService.delete("/user/expenditure/$id");
+      if (res.data != null) {
+        final data = res.data!;
+        return ExpenseModel(
+          nameOfItem: data["nameOfItem"],
+          category: data["category"],
+          estimatedAmount: int.tryParse(data["estimatedAmount"].toString())!,
+        );
       }
       throw ApiFailure(res.code!.toString());
     } catch (e) {

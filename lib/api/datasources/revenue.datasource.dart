@@ -5,6 +5,8 @@ import 'package:ladder/api/utils/api.errors.dart';
 abstract class RevenueDatasource {
   Future<List<RevenueModel>> fetchRevenues();
   Future<void> addRevenue(RevenueModel model);
+  Future<void> deleteRevenue(String id);
+  Future<RevenueModel> getRevenueById(String id);
 }
 
 class RevenueDatasourceImpl implements RevenueDatasource {
@@ -31,17 +33,45 @@ class RevenueDatasourceImpl implements RevenueDatasource {
     try {
       final res = await networkService.getHttp("/user/income");
       if (res.data != null) {
-        print("...... i am in this revenue fetch  ${res.data}");
-        return (res.data!["data"] as List).map(
-          (e) {
-            print(".....type of revenue amount ${e["amount"].runtimeType}");
+        return (res.data!["data"] as List)
+            .map(
+              (e) => RevenueModel(
+                nameOfRevenue: e["nameOfRevenue"],
+                amount: e["amount"],
+                id: e["id"].toString(),
+              ),
+            )
+            .toList();
+      }
+      throw ApiFailure(res.code!.toString());
+    } catch (e) {
+      throw ApiFailure(e.toString());
+    }
+  }
 
-            return RevenueModel(
-              nameOfRevenue: e["nameOfRevenue"],
-              amount: e["amount"],
-            );
-          },
-        ).toList();
+  @override
+  Future<void> deleteRevenue(String id) async {
+    try {
+      final res = await networkService.delete("/user/income/$id");
+      if (res.data != null) {
+        return;
+      }
+      throw ApiFailure(res.code!.toString());
+    } catch (e) {
+      throw ApiFailure(e.toString());
+    }
+  }
+
+  @override
+  Future<RevenueModel> getRevenueById(String id) async {
+    try {
+      final res = await networkService.delete("/user/income/$id");
+      if (res.data != null) {
+        final data = res.data!;
+        return RevenueModel(
+          nameOfRevenue: data["nameOfRevenue"],
+          amount: data["amount"],
+        );
       }
       throw ApiFailure(res.code!.toString());
     } catch (e) {

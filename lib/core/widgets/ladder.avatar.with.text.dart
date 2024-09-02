@@ -32,7 +32,7 @@ class _LadderAvatarWithTextState extends State<LadderAvatarWithText> {
       builder: (_, state) {
         final profileImagePath = state.maybeMap(
           orElse: () => null,
-          fetchUserProfileSuccess: (state) => state.profile.profileUrl,
+          fetchUserProfileSuccess: (state) => state.profile.profilePath,
         );
 
         return Row(
@@ -50,7 +50,7 @@ class _LadderAvatarWithTextState extends State<LadderAvatarWithText> {
             Text(
               state.maybeMap(
                 orElse: () => "username",
-                fetchUserProfileSuccess: (state) => state.profile.name,
+                fetchUserProfileSuccess: (state) => state.profile.name ?? "username",
               ),
               style: context.appTheme.textTheme.titleMedium?.copyWith(
                 fontSize: widget.fontSize ?? 25,

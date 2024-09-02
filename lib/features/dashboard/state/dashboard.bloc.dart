@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ladder/api/usecases/add.expenses.dart';
 import 'package:ladder/api/usecases/add.revenue.dart';
+
+import 'package:ladder/api/usecases/deletel.revenue.dart';
 import 'package:ladder/api/usecases/fetch.expenses.dart';
 import 'package:ladder/api/usecases/fetch.revenues.dart';
 import 'package:ladder/api/usecases/fetch.transactions.dart';
@@ -14,6 +16,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   final AddRevenue addRevenue;
   final FetchExpenses fetchExpenses;
   final FetchRevenues fetchRevenues;
+  final DeleteRevenue deleteRevenue;
 
   final FetchTransactions fetchTransactions;
 
@@ -30,6 +33,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     required this.fetchExpenses,
     required this.fetchRevenues,
     required this.fetchTransactions,
+    required this.deleteRevenue,
   }) : super(const DashboardState.initial()) {
     on<AddExpensesEvent>(_addExpenses);
     on<AddRevenueEvent>(_addRevenue);
@@ -37,6 +41,8 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     on<FetchRevenuesEvent>(_fetchRevenue);
 
     on<FetchTransactionsEvent>(_fetchTransactions);
+
+    on<DeleteRevenueEvent>(_deleteRevenue);
   }
 
   void _addExpenses(AddExpensesEvent event, Emitter<DashboardState> emit) async {
@@ -98,6 +104,15 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     result.fold(
       (l) => emit(DashboardState.error(l.message)),
       (r) => emit(DashboardState.fetchTransactionSuccess(r..sort((a, b) => b.date.compareTo(a.date)))),
+    );
+  }
+
+  void _deleteRevenue(DeleteRevenueEvent event, Emitter<DashboardState> emit) async {
+    emit(const DashboardState.deleteRevenueLoading());
+    final result = await deleteRevenue(event.id);
+    result.fold(
+      (l) => emit(DashboardState.error(l.message)),
+      (r) => emit(const DashboardState.deleteRevenueSuccess()),
     );
   }
 }

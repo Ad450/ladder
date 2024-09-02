@@ -9,6 +9,8 @@ import 'package:ladder/api/store/ladder.store.dart';
 import 'package:ladder/api/usecases/add.expenses.dart';
 import 'package:ladder/api/usecases/add.revenue.dart';
 import 'package:ladder/api/usecases/check.auth.status.dart';
+import 'package:ladder/api/usecases/delete.expense.dart';
+import 'package:ladder/api/usecases/deletel.revenue.dart';
 import 'package:ladder/api/usecases/fetch.expenses.dart';
 import 'package:ladder/api/usecases/fetch.metrics.dart';
 import 'package:ladder/api/usecases/fetch.revenues.dart';
@@ -17,6 +19,7 @@ import 'package:ladder/api/usecases/fetch.user.profile.dart';
 import 'package:ladder/api/usecases/signin.dart';
 import 'package:ladder/api/usecases/signout.dart';
 import 'package:ladder/api/usecases/signup.dart';
+import 'package:ladder/api/usecases/update.user.dart';
 
 final locator = GetIt.instance;
 
@@ -82,9 +85,9 @@ void setupLocator() {
     () => Signout(locator.get<AuthDatasource>()),
   );
 
-  // locator.registerLazySingleton<UpdateUser>(
-  //   () => UpdateUser(locator.get<AuthDatasource>()),
-  // );
+  locator.registerLazySingleton<UpdateUser>(
+    () => UpdateUser(locator.get<AuthDatasource>()),
+  );
 
   locator.registerLazySingleton<CheckAuthStaus>(
     () => CheckAuthStaus(locator.get<HiveStore>()),
@@ -92,5 +95,12 @@ void setupLocator() {
 
   locator.registerLazySingleton<FetchUserProfile>(
     () => FetchUserProfile(locator.get<AuthDatasource>()),
+  );
+
+  locator.registerLazySingleton<DeleteExpense>(
+    () => DeleteExpense(locator.get<ExpensesDatasource>()),
+  );
+  locator.registerLazySingleton<DeleteRevenue>(
+    () => DeleteRevenue(locator.get<RevenueDatasource>()),
   );
 }
