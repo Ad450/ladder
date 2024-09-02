@@ -1,7 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ladder/api/datasources/expenses.datasource.dart';
 import 'package:ladder/api/datasources/revenue.datasource.dart';
-import 'package:ladder/api/models/expense.model.dart';
 import 'package:ladder/api/models/revenue.model.dart';
 import 'package:ladder/api/network/parse.networ.response.dart';
 import 'package:ladder/api/utils/api.errors.dart';
