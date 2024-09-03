@@ -30,7 +30,14 @@ class ExpensesBloc extends Bloc<ExpensesEvent, ExpensesState> {
 
     result.fold(
       (l) => emit(ExpensesState.error(l.message)),
-      (r) => emit(ExpensesState.fetchExpensesSuccess(r)),
+      (r) {
+        final other = r
+            .where(
+              (e) => e.category.trim().toLowerCase() != "transport" && e.category.trim().toLowerCase() != "food",
+            )
+            .toList();
+        emit(ExpensesState.fetchExpensesSuccess(other));
+      },
     );
   }
 
@@ -42,7 +49,8 @@ class ExpensesBloc extends Bloc<ExpensesEvent, ExpensesState> {
     result.fold(
       (l) => emit(ExpensesState.error(l.message)),
       (r) => emit(
-        ExpensesState.fetchTransportExpensesSuccess(r.where((e) => e.category.toLowerCase() == "transport").toList()),
+        ExpensesState.fetchTransportExpensesSuccess(
+            r.where((e) => e.category.trim().toLowerCase() == "transport").toList()),
       ),
     );
   }
@@ -54,11 +62,12 @@ class ExpensesBloc extends Bloc<ExpensesEvent, ExpensesState> {
 
     result.fold(
       (l) => emit(ExpensesState.error(l.message)),
-      (r) => emit(
-        ExpensesState.fetchFoodExpensesSuccess(
-          r.where((e) => e.category.toLowerCase() == "food").toList(),
-        ),
-      ),
+      (r) {
+        final allFoodExpenses = r.where((e) => e.category.trim().toLowerCase() == "food").toList();
+        emit(
+          ExpensesState.fetchFoodExpensesSuccess(allFoodExpenses),
+        );
+      },
     );
   }
 

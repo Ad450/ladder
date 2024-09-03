@@ -38,7 +38,7 @@ class ExpensesDatasourceImpl implements ExpensesDatasource {
     try {
       final res = await networkService.getHttp("/user/expenditure");
       if (res.data != null) {
-        return (res.data!["data"] as List)
+        return (res.data as List)
             // unnecessary filtering but doing that because I inserted an expense
             // with null estimated value, api didnt reject it
 

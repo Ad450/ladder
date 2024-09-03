@@ -33,7 +33,7 @@ class RevenueDatasourceImpl implements RevenueDatasource {
     try {
       final res = await networkService.getHttp("/user/income");
       if (res.data != null) {
-        return (res.data!["data"] as List)
+        return (res.data as List)
             .map(
               (e) => RevenueModel(
                 nameOfRevenue: e["nameOfRevenue"],

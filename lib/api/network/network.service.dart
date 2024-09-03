@@ -156,6 +156,9 @@ class NetworkServiceImpl implements NetworkService {
     }
 
     if (response.statusCode.toString().startsWith('2')) {
+      // SMALL DEBUGGING
+      // print(".......entered here or not");
+      // print(".......... response has data or not ${response.data}");
       return ParsedNetworkResponse(data: response.data);
     }
 

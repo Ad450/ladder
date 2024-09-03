@@ -11,6 +11,7 @@ import 'package:ladder/gen/colors.gen.dart';
 void _clearTextfield(BuildContext context) {
   context.read<DashboardBloc>().expensesAmountController.clear();
   context.read<DashboardBloc>().expensesNameController.clear();
+  context.read<DashboardBloc>().expenseCategoryController.clear();
   context.read<DashboardBloc>().revenueAmountController.clear();
   context.read<DashboardBloc>().revenueNameController.clear();
 }

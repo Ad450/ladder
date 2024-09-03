@@ -33,10 +33,10 @@ class MetricsDatasourceImpl implements MetricsDatasource {
       return MetricsModel(
         totalExpenses: totalExpenses,
         totalRevenues: totalRevenues,
-        totalTransactions: (totalExpenses + totalRevenues),
+        totalTransactions: totalRevenues + totalExpenses,
       );
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 
@@ -47,7 +47,7 @@ class MetricsDatasourceImpl implements MetricsDatasource {
 
       return txs;
     } catch (e) {
-      throw HiveFailure(e.toString());
+      throw ApiFailure(e.toString());
     }
   }
 }

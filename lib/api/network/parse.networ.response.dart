@@ -1,7 +1,7 @@
-class ParsedNetworkResponse {
+class ParsedNetworkResponse<T> {
   ApiErrors? code;
   String? message;
-  Map<String, dynamic>? data;
+  T? data;
   List dataList;
 
   ParsedNetworkResponse({this.code, this.message, this.data, this.dataList = const []}) {
